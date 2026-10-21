@@ -1,0 +1,290 @@
+// Datos de las 4 landing pages de Open Day (noviembre de 2026).
+// Fuentes principales (ver README.md para el detalle):
+//   [OD]  Drive "OPEN DAY DE TODAS.xlsx" (actualizado por marketing.digital@celestinfreinet.edu.co el 18/10/2026)
+//   [MX]  Matriz MRPC por sede (15/10/2026), tabla "Datos por confirmar" y columna "Mientras tanto, decir"
+//   [AU]  Auditoría inicial de información (08/10/2026)
+//   [WEB] Sitios oficiales del colegio, consultados el 21/10/2026 (WhatsApp, teléfonos, correos)
+//   [DS]  Sistema de diseño "Célestin Freinet" (colores por sede, logotipos, canales)
+
+export const comun = {
+  marca: 'Colegio Célestin Freinet',
+  nombreLargo: 'Colegio de Educación Técnica y Académica Célestin Freinet',
+  promesa: 'Aprender para la vida. Crecer con tranquilidad.',
+  anios: 33,
+  pbx: { texto: '601 743 7661', tel: '+576017437661' }, // [WEB]
+  // Presentación Open Day Sede Administrativa 2027, p.2
+  promesaLarga: 'Elegir el Célestin Freinet es darles a tus hijos la tranquilidad de crecer protegidos hoy, y la certeza de abrirse paso hacia un futuro brillante.',
+  pilares: [
+    {
+      titulo: 'Entorno protector',
+      lema: 'Cuidar el presente',
+      texto: 'El escudo emocional y físico para nuestros estudiantes, garantizando un entorno educativo seguro y de calidad.',
+      color: 'rojo',
+      puntos: [
+        'Certificación antibullying con enfoque restaurativo',
+        'Cero celulares en rutas, clases y descansos',
+        'Cámaras monitoreadas, enfermería y convenio de ambulancia',
+        'Proyecto socioemocional con Editorial Norma y psicología',
+      ],
+    },
+    {
+      titulo: 'Tecnología e innovación',
+      lema: 'Aprender haciendo',
+      texto: 'La ciencia y la tecnología no se memorizan: se viven y se construyen de forma práctica, ética y conectada con el entorno.',
+      color: 'azul-oscuro',
+      puntos: [
+        'Robótica y STEAM con kits individuales',
+        'Google Reference School y laboratorios CloudLabs',
+        'Programación con CODE e inteligencia artificial',
+      ],
+    },
+    {
+      titulo: 'Construcción de futuro',
+      lema: 'Mentalidad global',
+      texto: 'Preparamos ciudadanos con solidez intelectual y habilidades técnicas, abriéndoles las puertas al mundo.',
+      color: 'azul-claro',
+      puntos: [
+        'Intercambio en Canadá',
+        'Convenios con universidades',
+      ],
+    },
+  ],
+  // Los 6 pasos oficiales [MX], sin examen ni entrevista.
+  pasos: [
+    { titulo: 'Inscripción', texto: 'Diligencia el formulario de tu sede.' },
+    { titulo: 'Open Day', texto: 'Asiste con tu hijo o hija a la jornada de puertas abiertas.' },
+    { titulo: 'Formulario', texto: 'Paga el formulario de admisión.' },
+    { titulo: 'Documentos', texto: 'Radica los documentos solicitados.' },
+    { titulo: 'Verificación', texto: 'Revisamos la información entregada.' },
+    { titulo: 'Matrícula', texto: 'Ordinaria en diciembre, extraordinaria en enero.' },
+  ],
+  pago: 'En línea por la pasarela Phidias, o en la tesorería o las recepciones de la sede con tarjeta débito, crédito o transferencia.',
+  ytb: 'https://www.youtube.com/@colegiocelestinfreinet6366',
+  tiktok: 'https://www.tiktok.com/@oficialccf1',
+};
+
+export const sedes = [
+  {
+    slug: 'administrativa',
+    nombre: 'Sede Administrativa',
+    corto: 'Administrativa',
+    color: 'azul-oscuro', // [DS] componente Sede
+    acento: 'rojo',
+    logo: 'logo-color',
+    logoBlanco: 'logo-blanco',
+    formId: 'ed04f99d-1a69-485d-8472-ab2fbfa0753f',
+    entorno: 'Sede fundadora · Urbana',
+    lugarCorto: 'Suba, Bogotá',
+    // [MX] "Confirmar antes de publicar": hay dos versiones (Calle 136 # 136-12 / Calle 136 136A 12). Se publica sin número.
+    direccion: 'Calle 136, Suba Toscana, Bogotá',
+    mapsQuery: 'Colegio Célestin Freinet Calle 136 Suba Toscana Bogotá',
+    localidad: 'Bogotá',
+    region: 'Bogotá D.C.',
+    whatsapp: { numero: '573224457251', texto: '+57 322 445 7251' }, // [WEB] "WhatsApp Admin"
+    correo: null,
+    web: 'https://celestinfreinet.edu.co/',
+    instagram: { url: 'https://www.instagram.com/oficialccf/', usuario: '@oficialccf' },
+    facebook: 'https://web.facebook.com/OficialCCF/',
+    openDay: {
+      fechaLarga: 'Sábado 21 de noviembre',
+      dia: '21', mes: 'NOV', diaSemana: 'Sábado',
+      sesiones: [{ hora: '8:00 a.m.', iso: '2026-11-21T08:00:00-05:00', para: null }],
+      siguiente: { fechaLarga: 'Sábado 5 de diciembre', hora: '8:00 a.m.', iso: '2026-12-05T08:00:00-05:00' },
+    },
+    h1: 'Aprender para la vida. Crecer con tranquilidad.',
+    intro: '33 años de trayectoria, protección y excelencia en Suba. Ven a nuestro Open Day: recorre la sede con tu hijo o hija, conoce nuestra propuesta y resuelve tus dudas de admisión 2027, de prejardín a 9.°.',
+    gancho: null,
+    porQue: [
+      { titulo: 'Bachiller y técnico SENA', texto: 'Tu hijo o hija puede graduarse como bachiller y técnico SENA en Software, Cocina o Multimedia.' },
+      { titulo: 'Inglés con Alianza Cambridge', texto: '6 horas semanales de inglés en una sede con Placa Dorada Cambridge.' },
+      { titulo: 'Tecnología desde 2.°', texto: 'Chromebooks, 4 salas de cómputo y kits de robótica desde 2.° con CODE, Arduino, C++ y Python.' },
+      { titulo: 'Actividades incluidas', texto: 'Fútbol, microfútbol, taekwondo, banda, robótica y danzas, más salidas pedagógicas, sin costo extra.' },
+    ],
+    cifras: [
+      { valor: 33, sufijo: '', etiqueta: 'años de trayectoria' },
+      { valor: 6, sufijo: ' h', etiqueta: 'de inglés a la semana' },
+      { valor: 4, sufijo: '', etiqueta: 'salas de cómputo' },
+      { valor: 300, prefijo: '+', sufijo: '', etiqueta: 'graduados al año' },
+    ],
+    logros: ['ICFES A+', 'Placa Dorada Cambridge', 'Finalistas nacionales de robótica (UPN)', 'Certificación antibullying'],
+    eligen: ['Disciplina', 'Valores', 'Respeto', 'Resultados', 'Actividades incluidas'],
+    datos: [
+      ['Calendario', 'A'],
+      ['Niveles', 'Preescolar a 11.°. Cupos nuevos de prejardín a 9.°'],
+      ['Actividades', 'Fútbol, microfútbol, taekwondo, banda, robótica y danzas, sin cobros extra'],
+      ['Servicios', 'Restaurante con almuerzo diario u ocasional y transporte escolar'],
+      ['Refuerzo', 'Sábados quincenales: presencial en preescolar, virtual en bachillerato'],
+    ],
+    futuroExtra: 'Bachiller y técnico SENA',
+    servicios: 'Sí. Restaurante con almuerzo diario u ocasional y transporte escolar.',
+    icfes: true,
+  },
+  {
+    slug: 'norte',
+    nombre: 'Sede Norte',
+    corto: 'Norte',
+    color: 'rojo',
+    acento: 'azul-oscuro',
+    logo: 'logo-color',
+    logoBlanco: 'logo-blanco',
+    formId: '82d4ee90-ed3f-4f60-ae3c-2fe65aabd61a',
+    entorno: 'Campestre · Km 6 vía Suba-Cota',
+    lugarCorto: 'Vía Suba-Cota',
+    direccion: 'Km 6 vía Suba-Cota, vereda Chorrillos',
+    mapsQuery: 'Colegio Célestin Freinet Sede Norte Km 6 vía Suba Cota',
+    localidad: 'Bogotá',
+    region: 'Bogotá D.C.',
+    whatsapp: { numero: '573160106741', texto: '+57 316 010 6741' }, // [WEB] "WhatsApp Norte"
+    correo: null,
+    web: 'https://celestinfreinet.edu.co/',
+    instagram: { url: 'https://www.instagram.com/oficialccf/', usuario: '@oficialccf' },
+    facebook: 'https://web.facebook.com/OficialCCF/',
+    openDay: {
+      fechaLarga: 'Sábado 21 de noviembre',
+      dia: '21', mes: 'NOV', diaSemana: 'Sábado',
+      sesiones: [{ hora: '8:00 a.m.', iso: '2026-11-21T08:00:00-05:00', para: null }],
+      siguiente: { fechaLarga: 'Sábado 5 de diciembre', hora: '8:00 a.m.', iso: '2026-12-05T08:00:00-05:00' },
+    },
+    h1: 'Conoce la Sede Norte, nuestro colegio campestre',
+    intro: 'Un espacio amplio, tranquilo, donde se respira aire puro. Ven a nuestro Open Day: recorre el campus con tu hijo o hija y resuelve tus dudas de admisión 2027, de prejardín a 9.°.',
+    // El descuento por asistir al Open Day [MX] no se publica: el 14/10 se aplazó comunicar descuentos en anuncios y landings.
+    gancho: null,
+    porQue: [
+      { titulo: 'Campus campestre', texto: 'Aire puro y zonas verdes en la vía Suba-Cota, con una huerta que trabajamos junto al Jardín Botánico.' },
+      { titulo: 'Inglés y francés', texto: 'Inglés 8 h semanales con Cambridge y francés con Alianza Francesa.' },
+      { titulo: 'Sin tareas en casa', texto: 'Nuestro enfoque "no tareas en casa": el trabajo académico fuerte sucede dentro del colegio.' },
+      { titulo: 'Técnico SENA o énfasis en inglés', texto: 'Al graduarse: técnico SENA en Software, Cocina o Multimedia, o énfasis en inglés.' },
+    ],
+    cifras: [
+      { valor: 33, sufijo: '', etiqueta: 'años de trayectoria' },
+      { valor: 8, sufijo: ' h', etiqueta: 'de inglés a la semana' },
+      { valor: 2, sufijo: '', etiqueta: 'idiomas: inglés y francés' },
+      { valor: 8, sufijo: '', etiqueta: 'actividades lúdicas sin costo extra' },
+    ],
+    logros: ['ICFES A+', 'Placa Dorada Cambridge', 'Certificaciones de francés DELF', 'Certificación antibullying'],
+    eligen: ['Campestre', 'Tranquilo', 'Idiomas', 'Técnica SENA', 'Familias que nos recomiendan'],
+    datos: [
+      ['Calendario', 'A'],
+      ['Niveles', 'Preescolar a 11.°. Cupos nuevos de prejardín a 9.°'],
+      ['Jornada', '7:30 a.m. a 3:00 p.m.'],
+      ['Actividades', 'Porras, fútbol, futsal, patinaje, taekwondo, baloncesto, banda marcial y voleibol, sin cobros extra'],
+      ['Refuerzo', 'Clínicas los sábados'],
+    ],
+    futuroExtra: 'Técnico SENA o énfasis en inglés',
+    servicios: 'Sí. Alimentación opcional (comida completa o servicio para calentar) y transporte escolar.',
+    icfes: true,
+  },
+  {
+    slug: 'bilingue',
+    nombre: 'Sede Bilingüe',
+    corto: 'Bilingüe',
+    color: 'azul-claro',
+    acento: 'rojo',
+    logo: 'logo-bilingue',
+    logoBlanco: 'logo-blanco',
+    formId: '09a8d84f-ee91-42f6-b3e8-1c4cf86a84bd',
+    entorno: 'Campestre · 20.000 m²',
+    lugarCorto: 'Vía Suba-Cota',
+    direccion: 'Km 7 vía Suba-Cota, vereda Chorrillos',
+    mapsQuery: 'Colegio Célestin Freinet Bilingüe Km 7 vía Suba Cota',
+    localidad: 'Bogotá',
+    region: 'Bogotá D.C.',
+    whatsapp: { numero: '573209320257', texto: '+57 320 932 0257' }, // [WEB]
+    correo: null, // Hay tres versiones del correo de admisiones (web, folleto e invitación): por confirmar.
+    web: 'https://celestinfreinetbilingue.edu.co/',
+    instagram: { url: 'https://www.instagram.com/oficialccf_bilingue/', usuario: '@oficialccf_bilingue' },
+    facebook: 'https://web.facebook.com/oficialccfbilingue/',
+    openDay: {
+      // [OD] 20 de noviembre, 9:00 a.m. (la matriz del 15/10 decía viernes 13 de noviembre, 8:00 a.m.)
+      fechaLarga: 'Viernes 20 de noviembre',
+      dia: '20', mes: 'NOV', diaSemana: 'Viernes',
+      sesiones: [{ hora: '9:00 a.m.', iso: '2026-11-20T09:00:00-05:00', para: null }],
+      siguiente: { fechaLarga: 'Viernes 4 de diciembre', hora: '9:00 a.m.', iso: '2026-12-04T09:00:00-05:00' },
+    },
+    h1: 'Tres idiomas, un campus para crecer',
+    intro: 'Ven a nuestro Open Day: recorre un campus campestre de 20.000 m², conoce cómo aprenden nuestros estudiantes en inglés, francés y mandarín, y resuelve tus dudas de admisión 2027, de prejardín a 9.°.',
+    gancho: null,
+    porQue: [
+      { titulo: 'Tres idiomas', texto: 'Inglés, francés y mandarín. Matemáticas y ciencias se enseñan en inglés.' },
+      { titulo: 'Campus de 20.000 m²', texto: 'Campestre, tipo castillo, con capilla, canchas de tenis, huerta, laboratorios y biblioteca.' },
+      { titulo: 'Grupos reducidos', texto: 'Grupos reducidos y salones con mobiliario ergonómico según la edad.' },
+      { titulo: 'Actividades en el horario', texto: 'Equitación, voleibol, fútbol, porras, tenis, danza, música y baloncesto. Rotan cada 3 meses.' },
+    ],
+    cifras: [
+      { valor: 3, sufijo: '', etiqueta: 'idiomas: inglés, francés y mandarín' },
+      { valor: 20000, sufijo: ' m²', etiqueta: 'de campus campestre' },
+      { valor: 8, sufijo: '', etiqueta: 'actividades dentro del horario' },
+      { valor: 33, sufijo: '', etiqueta: 'años de trayectoria' },
+    ],
+    logros: ['ICFES A+', 'Placa Dorada Cambridge', 'DELF 2025: el puntaje más alto entre varias instituciones', 'Certificación antibullying'],
+    eligen: ['Espacios verdes', 'Idiomas', 'Perfil de egresado', 'Antibullying', 'Actividades en horario'],
+    datos: [
+      ['Calendario', 'A'],
+      ['Niveles', 'Preescolar a 11.°. Cupos nuevos de prejardín a 9.°'],
+      ['Al egresar', 'Sin ruta técnica; certificaciones de idiomas'],
+      ['Refuerzo', 'Primaria presencial, bachillerato virtual'],
+      ['Admisiones', 'Lunes a viernes 8:00 a 12:00 y 1:00 a 4:00; sábado 8:00 a 12:00'],
+    ],
+    futuroExtra: 'Certificaciones de idiomas al egresar',
+    servicios: 'Sí. Restaurante y rutas escolares tercerizadas con monitoreo.',
+    icfes: true,
+  },
+  {
+    slug: 'ciudad-verde',
+    nombre: 'Sede Ciudad Verde',
+    nombreCorto: 'Ciudad Verde',
+    corto: 'Ciudad Verde',
+    color: 'rojo',
+    acento: 'azul-oscuro',
+    logo: 'logo-ciudad-verde',
+    logoBlanco: 'logo-ciudad-verde-blanco',
+    formId: 'af8f47a5-5350-4f8d-a979-9aeab943744f',
+    entorno: 'La sede más nueva · Soacha',
+    lugarCorto: 'Ciudad Verde, Soacha',
+    direccion: 'Carrera 31 # 17-201, Ciudad Verde, Soacha',
+    mapsQuery: 'Colegio Célestin Freinet Carrera 31 # 17-201 Ciudad Verde Soacha',
+    localidad: 'Soacha',
+    region: 'Cundinamarca',
+    whatsapp: { numero: '573175108832', texto: '+57 317 510 8832' }, // [WEB]
+    correo: 'admisionessoacha@celestinfreinet.edu.co', // [WEB]
+    web: 'https://celestinfreinetsoacha.edu.co/',
+    instagram: { url: 'https://www.instagram.com/oficialccf_soacha/', usuario: '@oficialccf_soacha' },
+    facebook: 'https://web.facebook.com/oficialccfsoacha/',
+    openDay: {
+      fechaLarga: 'Sábado 21 de noviembre',
+      dia: '21', mes: 'NOV', diaSemana: 'Sábado',
+      sesiones: [
+        { hora: '8:00 a.m.', iso: '2026-11-21T08:00:00-05:00', para: 'Preescolar y 1.°' },
+        { hora: '11:00 a.m.', iso: '2026-11-21T11:00:00-05:00', para: 'De 2.° a 8.°' },
+      ],
+      siguiente: { fechaLarga: 'Sábado 5 de diciembre', hora: '8:00 a.m. (preescolar y 1.°) y 11:00 a.m. (de 2.° a 8.°)', iso: '2026-12-05T08:00:00-05:00' },
+    },
+    h1: 'Crece con nosotros en Ciudad Verde',
+    intro: 'Un colegio católico con profundización en inglés, en la sede más nueva del colegio. Ven a nuestro Open Day con tu hijo o hija y resuelve tus dudas de admisión 2027.',
+    gancho: null,
+    porQue: [
+      { titulo: 'Énfasis en inglés', texto: 'Simulacros anuales de nivel para que cada estudiante avance año a año.' },
+      { titulo: 'Proyecto ONU', texto: 'Debates como representantes de países frente a estudiantes de otros colegios.' },
+      { titulo: 'Autonomía y cuidado', texto: 'Docente fija en kínder, espacios separados por edad y docentes que acompañan los descansos.' },
+      { titulo: 'Actividades sin costo', texto: 'Huerta, granja, fútbol, voleibol, manualidades y robótica desde prejardín.' },
+    ],
+    cifras: [
+      { valor: 33, sufijo: '', etiqueta: 'años de trayectoria' },
+      { valor: 6, sufijo: '', etiqueta: 'actividades sin costo desde prejardín' },
+      { valor: 2, sufijo: '', etiqueta: 'sábados de refuerzo al mes' },
+      { valor: 6, sufijo: '', etiqueta: 'zonas de transporte escolar' },
+    ],
+    // [MX] ICFES A+ y Placa Dorada Cambridge no aplican a Ciudad Verde; logros propios: Falta.
+    logros: ['Certificación antibullying', 'ISO 9001 (ICONTEC)', 'Google Reference School', 'Certificación CODE'],
+    eligen: ['Seguridad', 'Bienestar', 'Innovación', 'Actividades'],
+    datos: [
+      ['Niveles', 'Preescolar a 9.°. Crecemos un grado a la vez'],
+      ['Refuerzo', 'Dos sábados al mes, de transición a 9.°'],
+      ['Transporte', 'Por zonas: Ciudad Verde, Vínculos, Alfagres, Maiporé, Hogares Soacha y San Mateo'],
+      ['Servicios', 'Restaurante y transporte escolar'],
+    ],
+    futuroExtra: null,
+    servicios: 'Sí. Restaurante y transporte escolar por zonas: Ciudad Verde, Vínculos, Alfagres, Maiporé, Hogares Soacha y San Mateo.',
+    icfes: true, // [DS] la franja ICFES va en todas las páginas (decisión del 16/10). Ver README: la matriz advierte que ICFES A+ es de las sedes de Suba.
+  },
+];

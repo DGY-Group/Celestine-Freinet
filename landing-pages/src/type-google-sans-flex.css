@@ -1,0 +1,36 @@
+/* Propuesta tipográfica: Google Sans Flex en todos los niveles (títulos, cuerpo, botones, cifras y eslogan).
+   Mismos tamaños y jerarquías del sistema; cambia la familia y se usan sus ejes variables:
+   peso (wght 1 a 1000), ancho (wdth 25 a 151) y tamaño óptico automático (opsz).
+   Títulos y cifras ligeramente condensados (como pide un titular en mayúsculas), cuerpo en ancho normal
+   y eslogan ligero y expandido para conservar el carácter geométrico de Josefin Sans. */
+:root {
+  --font-titulos: "Google Sans Flex", "Google Sans", system-ui, sans-serif;
+  --font-cuerpo: "Google Sans Flex", "Google Sans", system-ui, sans-serif;
+  --font-eslogan: "Google Sans Flex", "Google Sans", system-ui, sans-serif;
+  --text-h1: 760 48px/1.04 var(--font-titulos);
+  --text-h2: 700 36px/1.1 var(--font-titulos);
+  --text-h3: 660 28px/1.15 var(--font-titulos);
+  --text-h4: 620 22px/1.25 var(--font-titulos);
+  --text-h5: 600 18px/1.3 var(--font-titulos);
+  --text-h6: 600 16px/1.35 var(--font-titulos);
+  --text-cuerpo: 400 18px/1.6 var(--font-cuerpo);
+  --text-cuerpo-pequeno: 400 16px/1.5 var(--font-cuerpo);
+  --text-nota: 420 14px/1.5 var(--font-cuerpo);
+  --text-intro: 360 22px/1.5 var(--font-cuerpo);
+  --text-etiqueta-web: 700 13px/1.4 var(--font-titulos);
+  --text-boton: 640 16px/1 var(--font-titulos);
+  --text-cifra: 820 56px/1 var(--font-titulos);
+  --text-eslogan: 300 20px/1.4 var(--font-eslogan);
+  /* Ancho por nivel (eje wdth) */
+  --fs-titulos: 88%;
+  --fs-cifra: 82%;
+  --fs-eslogan: 118%;
+  /* Espaciado por nivel */
+  --ls-h1: -.005em;
+  --ls-h2: 0em;
+  --ls-h3: .005em;
+  --ls-h4: .01em;
+  --ls-h5: .015em;
+  --ls-h6: .05em;
+  --ls-eslogan: .16em;
+}

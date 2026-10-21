@@ -1,0 +1,21 @@
+/* Tipografía del sistema de diseño (versión fiel):
+   títulos en Oswald, cuerpo en Calibri (Carlito en la web), eslogan en Josefin Sans. Valores de tokens.css. */
+:root {
+  --font-titulos: Oswald, "Arial Narrow", sans-serif;
+  --font-cuerpo: Calibri, Carlito, "Segoe UI", sans-serif;
+  --font-eslogan: "Josefin Sans", sans-serif;
+  --text-h1: 700 48px/1.1 var(--font-titulos);
+  --text-h2: 600 36px/1.15 var(--font-titulos);
+  --text-h3: 600 28px/1.2 var(--font-titulos);
+  --text-h4: 600 22px/1.25 var(--font-titulos);
+  --text-h5: 600 18px/1.3 var(--font-titulos);
+  --text-h6: 600 16px/1.35 var(--font-titulos);
+  --text-cuerpo: 400 18px/1.6 var(--font-cuerpo);
+  --text-cuerpo-pequeno: 400 16px/1.5 var(--font-cuerpo);
+  --text-nota: 400 14px/1.5 var(--font-cuerpo);
+  --text-intro: 400 22px/1.5 var(--font-cuerpo);
+  --text-etiqueta-web: 700 13px/1.4 var(--font-titulos);
+  --text-boton: 600 16px/1 var(--font-titulos);
+  --text-cifra: 700 56px/1 var(--font-titulos);
+  --text-eslogan: 500 20px/1.4 var(--font-eslogan);
+}
