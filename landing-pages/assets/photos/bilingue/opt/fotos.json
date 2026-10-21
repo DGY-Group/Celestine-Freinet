@@ -1,0 +1,83 @@
+[
+ {
+  "role": "hero",
+  "file": "hero.webp",
+  "alt": "Niños de primaria con chaqueta azul del uniforme sonríen y hacen la señal de paz junto a la fachada amarilla y blanca del colegio, en una zona verde.",
+  "caption": "Frente al castillo",
+  "sourceTitle": "COLEGIOCELESTINCOTA-29.jpg",
+  "width": 1440,
+  "height": 1080
+ },
+ {
+  "role": "hero-mobile",
+  "file": "hero-m.jpg",
+  "alt": "Grupo de niños con uniforme azul posa sonriente en un sendero de piedra junto a la fachada amarilla y blanca del colegio.",
+  "caption": "Frente al castillo",
+  "sourceTitle": "COLEGIOCELESTINCOTA-28.jpg",
+  "width": 960,
+  "height": 720
+ },
+ {
+  "role": "experiencia",
+  "file": "experiencia.webp",
+  "alt": "Letrero de bienvenida con las letras CCF, un corazón y banderas, que dice Welcome Célestin Freinet Bilingual school, bajo un techo de madera.",
+  "caption": "Bienvenida",
+  "sourceTitle": "COLEGIOCELESTINCOTA-93.jpg",
+  "width": 1344,
+  "height": 840
+ },
+ {
+  "role": "g1",
+  "file": "g1.webp",
+  "alt": "Tres estudiantes de bachillerato sonríen mientras trabajan en computadores portátiles en una sala con un mural de robots.",
+  "caption": "Tecnología",
+  "sourceTitle": "COLEGIOCELESTINCOTA-114.jpg",
+  "width": 800,
+  "height": 600
+ },
+ {
+  "role": "g2",
+  "file": "g2.webp",
+  "alt": "Estudiantes con uniforme azul sentados en sillas doradas dentro de una capilla con vitrales de colores.",
+  "caption": "Capilla",
+  "sourceTitle": "COLEGIOCELESTINCOTA-178.jpg",
+  "width": 800,
+  "height": 600
+ },
+ {
+  "role": "g3",
+  "file": "g3.jpg",
+  "alt": "Estudiantes de bachillerato leen sentados en el césped y sobre llantas pintadas, con zonas verdes y montañas al fondo.",
+  "caption": "Lectura al aire libre",
+  "sourceTitle": "COLEGIOCELESTINCOTA-102.jpg",
+  "width": 800,
+  "height": 600
+ },
+ {
+  "role": "g4",
+  "file": "g4.jpg",
+  "alt": "Dos caballos ensillados esperan bajo una estructura techada rodeada de árboles.",
+  "caption": "Equitación",
+  "sourceTitle": "COLEGIOCELESTINCOTA-262.jpg",
+  "width": 800,
+  "height": 600
+ },
+ {
+  "role": "g5",
+  "file": "g5.webp",
+  "alt": "Una niña sonríe mientras toca un xilófono junto a un compañero en un salón de colores.",
+  "caption": "Música",
+  "sourceTitle": "COLEGIOCELESTINCOTA-69.jpg",
+  "width": 800,
+  "height": 600
+ },
+ {
+  "role": "g6",
+  "file": "g6.jpg",
+  "alt": "Estudiantes juegan fútbol en una amplia cancha de césped rodeada de árboles altos y cielo azul.",
+  "caption": "Zonas verdes",
+  "sourceTitle": "COLEGIOCELESTINCOTA-312.jpg",
+  "width": 800,
+  "height": 600
+ }
+]

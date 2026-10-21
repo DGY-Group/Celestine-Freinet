@@ -1,8 +1,11 @@
 // Genera las 8 landing pages de Open Day: 4 sedes x 2 versiones tipográficas.
-//   dist/<sede>-sistema.html            fiel al sistema de diseño (Oswald, Carlito, Josefin Sans)
-//   dist/<sede>-google-sans-flex.html   propuesta con Google Sans Flex
-// Cada HTML es autocontenido (CSS, JS, logos y fotos incrustados). Además se genera dist/web/ con las
-// mismas páginas enlazando los recursos en archivos aparte, para publicarlas en un servidor.
+//   dist/open-day-sede-<sede>.html                    fiel al sistema de diseño (Oswald, Carlito, Josefin Sans)
+//   dist/open-day-sede-<sede>-google-sans-flex.html   propuesta con Google Sans Flex
+//   dist/og-open-day-sede-<sede>.jpg                  imagen para compartir (WhatsApp, Facebook), una por sede
+// Cada HTML es autocontenido (CSS, JS, fuentes, logos y fotos incrustados): se sube tal cual a cPanel, en la
+// carpeta de SITIO. Solo cargan de internet el formulario de HubSpot y los enlaces externos.
+// Además se genera dist/web/ con las mismas páginas y los recursos en archivos aparte.
+// Antes: python3 optimizar-fotos.py, python3 descargar-fuentes.py y node og.mjs (solo si cambian fotos, fuentes o fechas).
 // Uso: node build.mjs
 import fs from 'fs';
 import path from 'path';
@@ -15,6 +18,11 @@ const SRC = path.join(RAIZ, 'src');
 const ASSETS = process.env.ASSETS_DIR || path.join(RAIZ, 'assets');
 const DIST = process.env.DIST_DIR || path.join(RAIZ, 'dist');
 const WEB = path.join(DIST, 'web');
+// Dirección pública donde se suben los archivos (URL canónica, Open Graph y datos estructurados).
+const SITIO = (process.env.SITIO || 'https://celestinfreinet.edu.co/open-day/').replace(/\/?$/, '/');
+const ACTUALIZADO = { iso: '2026-10-21', texto: '21 de octubre de 2026' };
+const archivo = (slug, tema) => `open-day-sede-${slug}${tema === 'sistema' ? '' : `-${tema}`}.html`;
+const og = (slug) => `og-open-day-sede-${slug}.jpg`;
 
 const TEMAS = [
   { id: 'sistema', archivo: 'type-sistema.css', nombre: 'Sistema de diseño' },
@@ -23,21 +31,22 @@ const TEMAS = [
 const LOGOS = ['logo-color', 'logo-blanco', 'logo-bilingue', 'logo-ciudad-verde', 'logo-ciudad-verde-blanco', 'escudo', 'sello-icfes'];
 
 const leer = (p) => fs.readFileSync(p, 'utf8');
-const mime = (f) => (f.endsWith('.png') ? 'image/png' : f.endsWith('.webp') ? 'image/webp' : 'image/jpeg');
+const mime = (f) => (f.endsWith('.png') ? 'image/png' : f.endsWith('.webp') ? 'image/webp' : f.endsWith('.woff2') ? 'font/woff2' : 'image/jpeg');
 const dataUri = (f) => `data:${mime(f)};base64,${fs.readFileSync(f).toString('base64')}`;
 const pngSize = (f) => { const b = fs.readFileSync(f); return [b.readUInt32BE(16), b.readUInt32BE(20)]; };
 
 const css = leer(path.join(SRC, 'styles.css'));
 const js = leer(path.join(SRC, 'main.js'));
 
+// Fotos ya recortadas y reducidas por optimizar-fotos.py (assets/photos/<sede>/opt/).
 function fotos(slug, modo) {
-  const dir = path.join(ASSETS, 'photos', slug);
+  const dir = path.join(ASSETS, 'photos', slug, 'opt');
   const meta = JSON.parse(leer(path.join(dir, 'fotos.json')));
-  const ref = (archivo) => (modo === 'inline' ? dataUri(path.join(dir, archivo)) : `assets/photos/${slug}/${archivo}`);
+  const ref = (f) => (modo === 'inline' ? dataUri(path.join(dir, f)) : `assets/photos/${slug}/${f}`);
   const uno = (rol) => {
     const m = meta.find((x) => x.role === rol);
     if (!m) throw new Error(`Falta la foto "${rol}" de ${slug}`);
-    return { src: ref(path.basename(m.file)), alt: m.alt, caption: m.caption };
+    return { src: ref(m.file), alt: m.alt, caption: m.caption, width: m.width, height: m.height };
   };
   return {
     hero: uno('hero'),
@@ -59,8 +68,14 @@ function logos(modo) {
   return out;
 }
 
+// Fuentes de la versión, incrustadas (inline) o enlazadas (web). Vienen de descargar-fuentes.py.
+function fuentes(tema, modo) {
+  return leer(path.join(ASSETS, 'fonts', `${tema}.css`))
+    .replace(/url\(([\w.-]+\.woff2)\)/g, (_, f) => `url(${modo === 'inline' ? dataUri(path.join(ASSETS, 'fonts', f)) : `assets/fonts/${f}`})`);
+}
+
 // Comprobaciones de calidad sobre cada HTML generado.
-function validar(html, sede, nombre) {
+function validar(html, sede, nombre, url, modo) {
   const errores = [];
   const texto = html.replace(/data:[^"')]+/g, '');
   if (/\u2014/.test(texto)) errores.push('contiene raya larga (em dash)');
@@ -77,40 +92,43 @@ function validar(html, sede, nombre) {
     errores.push('Ciudad Verde menciona un dato que la matriz no permite (ICFES A+, Cambridge, equitación o SENA)');
   }
   if (sede.slug === 'bilingue' && /<dt>Jornada<\/dt>|7:30 a\.m\. a 3:00/.test(texto)) errores.push('la jornada de la Sede Bilingüe no se publica');
+  // Autocontenido: nada de Google Fonts ni recursos locales sueltos en la versión para cPanel.
+  if (/fonts\.googleapis|fonts\.gstatic/.test(texto)) errores.push('carga fuentes de Google Fonts');
+  if (modo === 'inline' && /(src|href|srcset)="assets\//.test(texto)) errores.push('enlaza archivos locales');
+  if (modo === 'inline' && /url\((?!data:)[^)]*\.(woff2|jpe?g|webp|png)/.test(html)) errores.push('CSS con archivos sin incrustar');
+  // SEO: canónica, Open Graph absoluto y JSON-LD válido.
+  if (!texto.includes(`<link rel="canonical" href="${url}">`)) errores.push('canónica incorrecta');
+  if (!texto.includes(`<meta property="og:image" content="${SITIO}${og(sede.slug)}">`)) errores.push('og:image incorrecta');
+  for (const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    try { JSON.parse(m[1]); } catch { errores.push('JSON-LD inválido'); }
+  }
+  if (/<h6/.test(texto)) errores.push('usa h6 (salta niveles de encabezado)');
+  if ((texto.match(/<h1[ >]/g) || []).length !== 1) errores.push('debe haber exactamente un h1');
+  if (!texto.includes('Optimizado por <a href="https://digitalegy.io" target="_blank" rel="noopener">Digitalegy</a>')) errores.push('falta el crédito de Digitalegy');
   if (errores.length) throw new Error(`${nombre}: ${errores.join('; ')}`);
 }
 
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.mkdirSync(WEB, { recursive: true });
 fs.cpSync(path.join(ASSETS, 'logos'), path.join(WEB, 'assets', 'logos'), { recursive: true, filter: (f) => !f.endsWith('.svg') });
+fs.cpSync(path.join(ASSETS, 'fonts'), path.join(WEB, 'assets', 'fonts'), { recursive: true, filter: (f) => !f.endsWith('.css') });
 
-const indice = [];
 for (const sede of sedes) {
-  fs.cpSync(path.join(ASSETS, 'photos', sede.slug), path.join(WEB, 'assets', 'photos', sede.slug), {
-    recursive: true, filter: (f) => fs.statSync(f).isDirectory() || f.endsWith('.jpg'),
-  });
+  const dirOpt = path.join(ASSETS, 'photos', sede.slug, 'opt');
+  fs.cpSync(dirOpt, path.join(WEB, 'assets', 'photos', sede.slug), { recursive: true, filter: (f) => !f.endsWith('.json') });
+  for (const destino of [DIST, WEB]) fs.copyFileSync(path.join(ASSETS, 'og', og(sede.slug)), path.join(destino, og(sede.slug)));
   for (const t of TEMAS) {
-    const tema = { id: t.id, css: `${leer(path.join(SRC, t.archivo))}\n${css}`, js };
-    const nombre = `${sede.slug}-${t.id}.html`;
+    const nombre = archivo(sede.slug, t.id);
+    const url = `${SITIO}${nombre}`;
+    const pub = { url, og: `${SITIO}${og(sede.slug)}`, actualizado: ACTUALIZADO, hermana: (slug) => archivo(slug, t.id) };
     for (const modo of ['inline', 'web']) {
-      const html = render({ sede, comun, tema, img: fotos(sede.slug, modo), logos: logos(modo), todas: sedes });
-      validar(html, sede, `${modo}/${nombre}`);
+      const tema = { id: t.id, css: `${leer(path.join(SRC, t.archivo))}\n${css}`, js, fuentes: fuentes(t.id, modo) };
+      const html = render({ sede, comun, tema, img: fotos(sede.slug, modo), logos: logos(modo), todas: sedes, pub });
+      validar(html, sede, `${modo}/${nombre}`, url, modo);
       fs.writeFileSync(path.join(modo === 'inline' ? DIST : WEB, nombre), html);
     }
-    const kb = Math.round(fs.statSync(path.join(DIST, nombre)).size / 1024);
-    indice.push({ sede, tema: t, nombre, kb });
-    console.log(`ok  ${nombre}  ${kb} KB`);
+    console.log(`ok  ${nombre}  ${Math.round(fs.statSync(path.join(DIST, nombre)).size / 1024)} KB`);
   }
 }
 
-// Índice para revisar las 8 páginas.
-const filas = indice.map((x) => `<tr><td>${x.sede.nombre}</td><td>${x.tema.nombre}</td><td><a href="${x.nombre}">${x.nombre}</a></td><td>${x.kb} KB</td></tr>`).join('\n');
-const idx = `<!doctype html><html lang="es-CO"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Open Day noviembre 2026 · Landing pages</title>
-<style>body{margin:0;padding:32px 16px;font:16px/1.5 system-ui,sans-serif;color:#172742;background:#fff}main{max-width:900px;margin:0 auto}h1{font-size:28px;text-transform:uppercase}table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px 8px;border-bottom:1px solid #c9ced6}a{color:#135c7b}</style></head>
-<body><main><h1>Open Day noviembre 2026</h1><p>Colegio Célestin Freinet · 4 sedes x 2 versiones tipográficas.</p>
-<table><thead><tr><th>Sede</th><th>Versión</th><th>Archivo</th><th>Peso</th></tr></thead><tbody>
-${filas}
-</tbody></table></main></body></html>`;
-fs.writeFileSync(path.join(DIST, 'index.html'), idx);
-fs.writeFileSync(path.join(WEB, 'index.html'), idx.replace(/ KB<\/td>/g, ' KB (autocontenido)</td>'));
-console.log(`\n${indice.length} páginas generadas en ${path.relative(process.cwd(), DIST) || 'dist'}/ y dist/web/`);
+console.log(`\n${sedes.length * TEMAS.length} páginas generadas en ${path.relative(process.cwd(), DIST) || 'dist'}/ (para cPanel, con las imágenes para compartir) y dist/web/`);

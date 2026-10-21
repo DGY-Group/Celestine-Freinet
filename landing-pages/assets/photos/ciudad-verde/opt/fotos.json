@@ -1,0 +1,83 @@
+[
+ {
+  "role": "hero",
+  "file": "hero.webp",
+  "alt": "Estudiantes con uniforme rojo caminan sonrientes por un pasillo de ladrillo con ventanales; al fondo se ven los edificios de la ciudadela.",
+  "caption": "Entre clases",
+  "sourceTitle": "CELESTINSOACHA_-94.jpg",
+  "width": 1440,
+  "height": 1080
+ },
+ {
+  "role": "hero-mobile",
+  "file": "hero-m.webp",
+  "alt": "Una niña con falda escocesa y chaleco rojo salta feliz junto a un columpio en un patio de baldosas de colores.",
+  "caption": "Recreo",
+  "sourceTitle": "CELESTINSOACHA_-10.jpg",
+  "width": 960,
+  "height": 720
+ },
+ {
+  "role": "experiencia",
+  "file": "experiencia.webp",
+  "alt": "Estudiantes en un patio con juegos infantiles de colores, llantas pintadas y los edificios de ladrillo de Ciudad Verde al fondo.",
+  "caption": "El patio",
+  "sourceTitle": "CELESTINSOACHA_-33.jpg",
+  "width": 1344,
+  "height": 840
+ },
+ {
+  "role": "g1",
+  "file": "g1.webp",
+  "alt": "Una niña de preescolar dibuja concentrada en su pupitre junto a sus compañeros.",
+  "caption": "Preescolar",
+  "sourceTitle": "CELESTINSOACHA_-22.jpg",
+  "width": 800,
+  "height": 600
+ },
+ {
+  "role": "g2",
+  "file": "g2.webp",
+  "alt": "Una niña con diadema blanca sonríe en la sala de cómputo; detrás, un compañero trabaja frente a un computador.",
+  "caption": "Sala de cómputo",
+  "sourceTitle": "CELESTINSOACHA_-144.jpg",
+  "width": 800,
+  "height": 600
+ },
+ {
+  "role": "g3",
+  "file": "g3.webp",
+  "alt": "Una adulta acompaña a un estudiante que escribe en su cuaderno dentro del salón.",
+  "caption": "Acompañamiento",
+  "sourceTitle": "CELESTINSOACHA_-100.jpg",
+  "width": 800,
+  "height": 600
+ },
+ {
+  "role": "g4",
+  "file": "g4.webp",
+  "alt": "Un estudiante con uniforme de educación física corre con un balón de baloncesto en una cancha azul.",
+  "caption": "Deporte",
+  "sourceTitle": "CELESTINSOACHA_-131.jpg",
+  "width": 800,
+  "height": 600
+ },
+ {
+  "role": "g5",
+  "file": "g5.webp",
+  "alt": "Un adulto del colegio levanta en brazos a una niña sonriente frente a un mural de castillo en la zona de preescolar.",
+  "caption": "Alegría en preescolar",
+  "sourceTitle": "CELESTINSOACHA_-156.jpg",
+  "width": 800,
+  "height": 600
+ },
+ {
+  "role": "g6",
+  "file": "g6.webp",
+  "alt": "Tres estudiantes sonríen sentadas en un juego del patio y hacen la señal de paz.",
+  "caption": "Descanso",
+  "sourceTitle": "CELESTINSOACHA_-59.jpg",
+  "width": 800,
+  "height": 600
+ }
+]

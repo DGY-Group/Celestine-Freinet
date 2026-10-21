@@ -1,13 +1,8 @@
 // Plantilla única de la landing de Open Day. La misma estructura sirve a las 4 sedes y a las 2 versiones
-// tipográficas: solo cambia la hoja de tipografía (type-sistema.css o type-google-sans-flex.css) y las fuentes cargadas.
+// tipográficas: solo cambia la hoja de tipografía (type-sistema.css o type-google-sans-flex.css) y las fuentes incrustadas.
 
 const esc = (s) => String(s ?? '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-
-const FUENTES = {
-  sistema: 'https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;500;600&family=Oswald:wght@500;600;700&display=swap',
-  'google-sans-flex': 'https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wdth,wght@6..144,25..151,1..1000&display=swap',
-};
 
 const ICONOS = {
   instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3"/></svg>',
@@ -21,7 +16,7 @@ const fin = (s) => (/[.!?]$/.test(s) ? s : `${s}.`);
 // Fecha y hora en formato de calendario (UTC) a partir de un ISO con zona horaria.
 const utc = (iso, horas = 0) => new Date(Date.parse(iso) + horas * 3600e3).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
 
-export function render({ sede, comun, tema, img, logos, todas }) {
+export function render({ sede, comun, tema, img, logos, todas, pub }) {
   const od = sede.openDay;
   const s1 = od.sesiones[0];
   const varias = od.sesiones.length > 1;
@@ -61,25 +56,6 @@ export function render({ sede, comun, tema, img, logos, todas }) {
     textoFin: 'Escríbenos por WhatsApp para agendar tu visita.',
   };
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': od.sesiones.map((x) => ({
-      '@type': 'EducationEvent',
-      name: `Open Day ${nombre}${x.para ? ` (${x.para})` : ''} · ${comun.marca}`,
-      description: `Jornada de puertas abiertas de la ${nombre} para familias interesadas en la admisión 2027.`,
-      startDate: x.iso,
-      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-      eventStatus: 'https://schema.org/EventScheduled',
-      inLanguage: 'es-CO',
-      location: {
-        '@type': 'Place',
-        name: `${comun.marca}, ${nombre}`,
-        address: { '@type': 'PostalAddress', streetAddress: sede.direccion.split(',')[0], addressLocality: sede.localidad, addressRegion: sede.region, addressCountry: 'CO' },
-      },
-      organizer: { '@type': 'EducationalOrganization', name: comun.nombreLargo, url: sede.web, telephone: sede.whatsapp.texto },
-    })),
-  };
-
   const credenciales = [`${comun.anios} años de trayectoria`, ...sede.logros];
   const sello = {
     administrativa: ['Sede fundadora', 'Suba Toscana'],
@@ -115,6 +91,58 @@ export function render({ sede, comun, tema, img, logos, todas }) {
     ['¿Y si no puedo asistir ese día?', `${fin(`Tenemos otro Open Day el ${od.siguiente.fechaLarga.toLowerCase()}, ${od.siguiente.hora}`)} También puedes escribirnos por WhatsApp al ${sede.whatsapp.texto}.`],
   ];
 
+  // Datos estructurados: la página, la sede como colegio, cada sesión del Open Day y las preguntas frecuentes.
+  const idColegio = `${pub.url}#colegio`;
+  const direccionLd = { '@type': 'PostalAddress', streetAddress: sede.direccion.split(',')[0], addressLocality: sede.localidad, addressRegion: sede.region, addressCountry: 'CO' };
+  const eventos = od.sesiones.map((x, i) => ({
+    '@type': 'EducationEvent',
+    '@id': `${pub.url}#open-day-${i + 1}`,
+    name: `Open Day ${nombre}${x.para ? ` (${x.para})` : ''} · ${comun.marca}`,
+    description: `Jornada de puertas abiertas de la ${nombre} para familias interesadas en la admisión 2027: recorrido por la sede, presentación de la propuesta educativa y resolución de dudas.`,
+    url: pub.url,
+    image: [pub.og],
+    startDate: x.iso,
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    eventStatus: 'https://schema.org/EventScheduled',
+    inLanguage: 'es-CO',
+    audience: { '@type': 'Audience', audienceType: x.para ? `Familias con estudiantes de ${x.para.toLowerCase()}` : 'Familias interesadas en la admisión 2027' },
+    location: { '@type': 'Place', name: `${comun.marca}, ${nombre}`, address: direccionLd },
+    organizer: { '@id': idColegio },
+  }));
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': `${pub.url}#pagina`,
+        url: pub.url,
+        name: titulo,
+        description: descripcion,
+        inLanguage: 'es-CO',
+        dateModified: pub.actualizado.iso,
+        primaryImageOfPage: { '@type': 'ImageObject', url: pub.og, width: 1200, height: 630 },
+        about: eventos.map((e) => ({ '@id': e['@id'] })),
+        publisher: { '@id': idColegio },
+      },
+      {
+        '@type': 'School',
+        '@id': idColegio,
+        name: `${comun.marca}, ${nombre}`,
+        url: sede.web,
+        telephone: `+57 ${comun.pbx.texto}`,
+        address: direccionLd,
+        parentOrganization: { '@type': 'EducationalOrganization', name: comun.nombreLargo, url: 'https://celestinfreinet.edu.co/' },
+        sameAs: [sede.instagram.url, sede.facebook, comun.ytb, comun.tiktok],
+      },
+      ...eventos,
+      {
+        '@type': 'FAQPage',
+        '@id': `${pub.url}#preguntas`,
+        mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+      },
+    ],
+  };
+
   const futuro = sede.futuroExtra ? [...comun.pilares[2].puntos, sede.futuroExtra] : comun.pilares[2].puntos;
   const pilares = comun.pilares.map((p, i) => (i === 2 ? { ...p, puntos: futuro } : p));
   const flecha = '<span class="ccf-boton__flecha" aria-hidden="true"></span>';
@@ -139,16 +167,27 @@ export function render({ sede, comun, tema, img, logos, todas }) {
 <title>${esc(titulo)}</title>
 <meta name="description" content="${esc(descripcion)}">
 <meta name="theme-color" content="${sede.color === 'rojo' ? '#7e1438' : sede.color === 'azul-claro' ? '#135c7b' : '#172742'}">
+<link rel="canonical" href="${esc(pub.url)}">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="${esc(comun.marca)}">
+<meta property="og:url" content="${esc(pub.url)}">
 <meta property="og:title" content="${esc(`Open Day ${nombre} · ${od.fechaLarga}`)}">
 <meta property="og:description" content="${esc(descripcion)}">
+<meta property="og:image" content="${esc(pub.og)}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${esc(`Open Day ${nombre} del ${comun.marca}, ${od.fechaLarga.toLowerCase()}, ${horas}`)}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(`Open Day ${nombre} · ${od.fechaLarga}`)}">
+<meta name="twitter:description" content="${esc(descripcion)}">
+<meta name="twitter:image" content="${esc(pub.og)}">
 <link rel="icon" type="image/png" href="${logos.favicon}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="${FUENTES[tema.id]}">
 <script>document.documentElement.className += ' js';</script>
 <style>
+${tema.fuentes}
 ${tema.css}
 :root { --sede: var(--${sede.color}); --sede-acento: var(--${sede.acento}); }
 </style>
@@ -212,8 +251,8 @@ ${tema.css}
         <div class="hero__barras" aria-hidden="true"><span style="--retardo:250ms"></span><span style="--retardo:330ms"></span><span style="--retardo:410ms"></span><span style="--retardo:490ms"></span></div>
         <div class="hero__foto">
           <picture>
-            <source media="(max-width: 767px)" srcset="${img.heroM.src}">
-            <img src="${img.hero.src}" alt="${esc(img.hero.alt)}" width="1920" height="1080" fetchpriority="high">
+            <source media="(max-width: 767px)" srcset="${img.heroM.src}" width="${img.heroM.width}" height="${img.heroM.height}">
+            <img src="${img.hero.src}" alt="${esc(img.hero.alt)}" width="${img.hero.width}" height="${img.hero.height}" fetchpriority="high">
           </picture>
         </div>
         <div class="hero__sello" data-entrada style="--retardo:560ms"><strong>${esc(sello[0])}</strong><span>${esc(sello[1])}</span></div>
@@ -231,16 +270,17 @@ ${tema.css}
   <section class="seccion seccion--suave" id="reserva" aria-labelledby="titulo-reserva">
     <div class="contenedor registro">
       <div class="registro__info" data-reveal="izq">
-        <h6>Paso 1 · Inscripción</h6>
+        <span class="sobretitulo">Paso 1 · Inscripción</span>
         <h2 id="titulo-reserva">Reserva tu cupo en el Open Day</h2>
         <p class="ccf-intro">Déjanos tus datos y nuestro equipo de admisiones te contactará para acompañarte en tu visita.</p>
         ${sede.gancho ? `<div class="gancho"><div><h3>${esc(sede.gancho.titulo)}</h3><p>${esc(sede.gancho.texto)}</p></div></div>` : ''}
-        <ul class="registro__lista">
-          <li><span class="registro__lbl">Fecha</span><span class="registro__val"><strong>${esc(od.fechaLarga)} de ${anio}</strong></span></li>
-          <li><span class="registro__lbl">${varias ? 'Sesiones' : 'Hora'}</span><span class="registro__val">${od.sesiones.map((x) => `<strong>${esc(x.hora)}${x.para ? ` · ${esc(x.para)}` : ''}</strong>`).join('')}</span></li>
-          <li><span class="registro__lbl">Lugar</span><span class="registro__val"><strong>${esc(nombre)}</strong>${esc(sede.direccion)}</span></li>
-          <li><span class="registro__lbl">Para</span><span class="registro__val">Familias interesadas en cupos 2027${varias ? '' : ', de prejardín a 9.°'}</span></li>
-        </ul>
+        <dl class="registro__lista">
+          <div><dt class="registro__lbl">Fecha</dt><dd class="registro__val"><strong>${esc(od.fechaLarga)} de ${anio}</strong></dd></div>
+          <div><dt class="registro__lbl">${varias ? 'Sesiones' : 'Hora'}</dt><dd class="registro__val">${od.sesiones.map((x) => `<strong>${esc(x.hora)}${x.para ? ` · ${esc(x.para)}` : ''}</strong>`).join('')}</dd></div>
+          <div><dt class="registro__lbl">Lugar</dt><dd class="registro__val"><strong>${esc(nombre)}</strong>${esc(sede.direccion)}</dd></div>
+          <div><dt class="registro__lbl">Para</dt><dd class="registro__val">Familias interesadas en cupos 2027${varias ? '' : ', de prejardín a 9.°'}</dd></div>
+        </dl>
+        <p class="registro__nota">Información actualizada el <time datetime="${pub.actualizado.iso}">${esc(pub.actualizado.texto)}</time>.</p>
         <div class="registro__acciones">
           <a class="ccf-boton ccf-boton--secundario" href="${esc(gcal)}" data-ics target="_blank" rel="noopener">Agregar a mi calendario</a>
           <a class="ccf-boton ccf-boton--whatsapp" href="${esc(wa)}" target="_blank" rel="noopener">WhatsApp de la sede</a>
@@ -249,7 +289,7 @@ ${tema.css}
       <div class="tarjeta-form" data-reveal="der">
         <div class="tarjeta-form__banda" aria-hidden="true"></div>
         <div class="tarjeta-form__cuerpo">
-          <div class="tarjeta-form__cabeza"><h6>Inscripción · ${esc(nombre)}</h6><p>${esc(od.fechaLarga)} · ${esc(horas)}</p></div>
+          <div class="tarjeta-form__cabeza"><span class="sobretitulo">Inscripción · ${esc(nombre)}</span><p>${esc(od.fechaLarga)} · ${esc(horas)}</p></div>
           <div class="ccf-ranura-formulario">
             <div class="ccf-ranura-formulario__carga" role="status">
               <span>Cargando el formulario de inscripción.</span>
@@ -266,12 +306,12 @@ ${tema.css}
   <section class="seccion" id="open-day" aria-labelledby="titulo-experiencia">
     <div class="contenedor">
       <div class="seccion__cabeza" data-reveal>
-        <h6>${esc(od.fechaLarga)} · ${esc(horas)}</h6>
+        <span class="sobretitulo">${esc(od.fechaLarga)} · ${esc(horas)}</span>
         <h2 id="titulo-experiencia">Qué vivirás en el Open Day</h2>
         <p>Una mañana para conocernos en persona, con tu familia.</p>
       </div>
       <div class="experiencia">
-        <div class="experiencia__foto"><img src="${img.experiencia.src}" alt="${esc(img.experiencia.alt)}" width="1600" height="1000" loading="lazy" decoding="async"></div>
+        <div class="experiencia__foto"><img src="${img.experiencia.src}" alt="${esc(img.experiencia.alt)}" width="${img.experiencia.width}" height="${img.experiencia.height}" loading="lazy" decoding="async"></div>
         <ol class="lista-numerada">
           ${experiencia.map((x, i) => `<li data-reveal style="--retardo:${i * 90}ms"><div><h3>${esc(x.t)}</h3><p>${esc(x.p)}</p></div></li>`).join('\n          ')}
         </ol>
@@ -282,7 +322,7 @@ ${tema.css}
   <section class="seccion seccion--suave" id="sede" aria-labelledby="titulo-sede">
     <div class="contenedor">
       <div class="seccion__cabeza" data-reveal>
-        <h6>${esc(sede.entorno)}</h6>
+        <span class="sobretitulo">${esc(sede.entorno)}</span>
         <h2 id="titulo-sede">Por qué la ${esc(nombre)}</h2>
         <p>Lo que hace única a la ${esc(nombre)}, en cuatro razones.</p>
       </div>
@@ -298,7 +338,7 @@ ${tema.css}
   <section class="seccion" aria-labelledby="titulo-pilares">
     <div class="contenedor">
       <div class="seccion__cabeza" data-reveal>
-        <h6>Una marca, cuatro sedes</h6>
+        <span class="sobretitulo">Una marca, cuatro sedes</span>
         <h2 id="titulo-pilares">Tres pilares que nos definen</h2>
         <p>${esc(comun.promesaLarga)}</p>
       </div>
@@ -312,7 +352,7 @@ ${tema.css}
     <div class="contenedor">
       <div class="galeria__cabeza">
         <div class="seccion__cabeza" data-reveal>
-          <h6>${esc(sede.lugarCorto)}</h6>
+          <span class="sobretitulo">${esc(sede.lugarCorto)}</span>
           <h2 id="titulo-galeria">Así se vive la ${esc(nombre)}</h2>
         </div>
         <div class="galeria__controles">
@@ -321,7 +361,7 @@ ${tema.css}
         </div>
       </div>
       <div class="galeria__pista" tabindex="0" aria-label="Galería de fotos de la ${esc(nombre)}">
-        ${img.galeria.map((g, i) => `<figure class="galeria__item" data-reveal style="--retardo:${Math.min(i, 3) * 80}ms"><div class="galeria__marco"><img src="${g.src}" alt="${esc(g.alt)}" width="1200" height="900" loading="lazy" decoding="async"></div><figcaption>${esc(g.caption)}</figcaption></figure>`).join('\n        ')}
+        ${img.galeria.map((g, i) => `<figure class="galeria__item" data-reveal style="--retardo:${Math.min(i, 3) * 80}ms"><div class="galeria__marco"><img src="${g.src}" alt="${esc(g.alt)}" width="${g.width}" height="${g.height}" loading="lazy" decoding="async"></div><figcaption>${esc(g.caption)}</figcaption></figure>`).join('\n        ')}
       </div>
     </div>
   </section>
@@ -329,7 +369,7 @@ ${tema.css}
   <section class="seccion" id="admision" aria-labelledby="titulo-admision">
     <div class="contenedor" data-reveal-grupo>
       <div class="seccion__cabeza" data-reveal>
-        <h6>Admisión 2027</h6>
+        <span class="sobretitulo">Admisión 2027</span>
         <h2 id="titulo-admision">Tu camino a la matrícula</h2>
         <p>Seis pasos, y el Open Day es el segundo. Inscribirte hoy es el primero.</p>
       </div>
@@ -343,13 +383,13 @@ ${tema.css}
   <section class="seccion seccion--suave" aria-labelledby="titulo-eligen">
     <div class="contenedor eligen">
       <div data-reveal="izq">
-        <h6>Lo que más valoran</h6>
+        <span class="sobretitulo">Lo que más valoran</span>
         <h2 id="titulo-eligen">Por qué las familias nos eligen</h2>
         <p class="ccf-intro">Lo que más escuchamos de las familias de la ${esc(nombre)}.</p>
         <ul class="chips">${sede.eligen.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
       </div>
       <div data-reveal="der">
-        <h6>Respaldo</h6>
+        <span class="sobretitulo">Respaldo</span>
         <h3>Logros y certificaciones</h3>
         <ul class="logros">${sede.logros.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
       </div>
@@ -359,7 +399,7 @@ ${tema.css}
   <section class="seccion" id="preguntas" aria-labelledby="titulo-preguntas">
     <div class="contenedor faq">
       <div data-reveal="izq">
-        <h6>Preguntas frecuentes</h6>
+        <span class="sobretitulo">Preguntas frecuentes</span>
         <h2 id="titulo-preguntas">Todo lo que necesitas saber</h2>
         <p class="ccf-intro">¿Tienes otra pregunta? Escríbenos y te respondemos.</p>
         <a class="ccf-boton ccf-boton--whatsapp" href="${esc(wa)}" target="_blank" rel="noopener">Pregunta por WhatsApp</a>
@@ -373,17 +413,17 @@ ${tema.css}
   <section class="seccion seccion--suave" id="ubicacion" aria-labelledby="titulo-ubicacion">
     <div class="contenedor ubicacion">
       <div class="direccion" data-reveal="izq">
-        <h6 style="color:var(--escudo-manos)">Cómo llegar</h6>
+        <span class="sobretitulo" style="color:var(--escudo-manos)">Cómo llegar</span>
         <h2 id="titulo-ubicacion" style="color:var(--blanco)">${esc(nombre)}</h2>
         <p class="ccf-intro">${esc(sede.direccion)}</p>
         <div class="direccion__acciones">
           <a class="ccf-boton ccf-boton--claro" href="${esc(maps)}" target="_blank" rel="noopener">Abrir en Google Maps</a>
           <a class="ccf-boton ccf-boton--contorno-claro" href="${esc(wa)}" target="_blank" rel="noopener">WhatsApp</a>
         </div>
-        <p class="direccion__contacto">WhatsApp <a href="${esc(wa)}" target="_blank" rel="noopener">${esc(sede.whatsapp.texto)}</a> · PBX <a href="tel:${comun.pbx.tel}">${esc(comun.pbx.texto)}</a>${sede.correo ? ` · <a href="mailto:${esc(sede.correo)}">${esc(sede.correo)}</a>` : ''}</p>
+        <p class="direccion__contacto">WhatsApp <a href="${esc(wa)}" target="_blank" rel="noopener">${esc(sede.whatsapp.texto)}</a> · PBX <a href="tel:${comun.pbx.tel}">${esc(comun.pbx.texto)}</a>${sede.correo ? ` · <a href="mailto:${esc(sede.correo)}">${esc(sede.correo).replace('@', '@<wbr>')}</a>` : ''}</p>
       </div>
       <div data-reveal="der">
-        <h6>Datos de la sede</h6>
+        <span class="sobretitulo">Datos de la sede</span>
         <h3>Lo esencial</h3>
         <dl class="datos">
           ${sede.datos.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('\n          ')}
@@ -396,7 +436,7 @@ ${tema.css}
     <div class="cierre__barras" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
     <div class="contenedor">
       <div data-reveal>
-        <h6>Open Day · ${esc(nombre)}</h6>
+        <span class="sobretitulo">Open Day · ${esc(nombre)}</span>
         <h2 id="titulo-cierre">Te esperamos el ${esc(od.fechaLarga.toLowerCase())}</h2>
         <p>${esc(horas)} · ${esc(sede.direccion)}</p>
         <a class="ccf-boton ccf-boton--claro ccf-boton--grande" href="#reserva">Reserva tu cupo ${flecha}</a>
@@ -413,9 +453,9 @@ ${tema.css}
   <div class="contenedor ccf-pie__columnas">
     <div>
       <div class="ccf-pie__logo"><img src="${logos[sede.logoBlanco]}" alt="${esc(comun.marca)}" width="${logos.dim[sede.logoBlanco][0]}" height="${logos.dim[sede.logoBlanco][1]}" loading="lazy"></div>
-      <h3>Una marca, cuatro sedes</h3>
+      <h3>Un grupo, cuatro sedes</h3>
       <div class="ccf-pie__sedes">
-        ${todas.map((t) => `<a class="ccf-sede ccf-sede--${t.color}" href="${esc(t.web)}" target="_blank" rel="noopener"${t.slug === sede.slug ? ' aria-current="true"' : ''}>${esc(t.nombreCorto || t.nombre)}</a>`).join('\n        ')}
+        ${todas.map((t) => `<a class="ccf-sede ccf-sede--${t.color}" href="${esc(pub.hermana(t.slug))}"${t.slug === sede.slug ? ' aria-current="page"' : ''}><span class="visualmente-oculto">Open Day </span>${esc(t.nombreCorto || t.nombre)}</a>`).join('\n        ')}
       </div>
     </div>
     <div>
@@ -424,7 +464,7 @@ ${tema.css}
         <li>${esc(sede.direccion)}</li>
         <li><a href="${esc(wa)}" target="_blank" rel="noopener">WhatsApp ${esc(sede.whatsapp.texto)}</a></li>
         <li><a href="tel:${comun.pbx.tel}">PBX ${esc(comun.pbx.texto)}</a></li>
-        ${sede.correo ? `<li><a href="mailto:${esc(sede.correo)}">${esc(sede.correo)}</a></li>` : ''}
+        ${sede.correo ? `<li><a href="mailto:${esc(sede.correo)}">${esc(sede.correo).replace('@', '@<wbr>')}</a></li>` : ''}
       </ul>
     </div>
     <div>
@@ -449,14 +489,14 @@ ${tema.css}
   </div>
   <div class="ccf-pie__legal">
     <div class="contenedor">
-      <span>${esc(comun.nombreLargo)} · ${anio}</span>
+      <span>${esc(comun.nombreLargo)} · ${anio} · Optimizado por <a href="https://digitalegy.io" target="_blank" rel="noopener">Digitalegy</a></span>
       <span class="ccf-eslogan">#NuestraHuella</span>
     </div>
   </div>
   ${sede.icfes ? `<div class="ccf-banda-icfes ccf-banda-icfes--web"><div class="contenedor"><img src="${logos['sello-icfes']}" alt="ICFES Nivel Muy Superior" width="233" height="120" loading="lazy"><span><strong>Somos ICFES Muy Superior</strong>, máxima calificación otorgada a los mejores colegios del país.</span></div></div>` : ''}
 </footer>
 
-<div class="barra-movil" aria-label="Acciones rápidas">
+<div class="barra-movil" role="group" aria-label="Acciones rápidas">
   <a class="ccf-boton" href="#reserva">Reserva tu cupo</a>
   <a class="ccf-boton ccf-boton--whatsapp" href="${esc(wa)}" target="_blank" rel="noopener" aria-label="WhatsApp de la sede">WhatsApp</a>
 </div>
