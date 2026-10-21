@@ -67,6 +67,9 @@ body {
 img { display: block; max-width: 100%; height: auto; }
 a { color: var(--azul-claro); text-underline-offset: 3px; }
 a:hover { color: var(--azul-oscuro); }
+/* Los números de teléfono no se parten en dos líneas; los correos largos sí, para no desbordar en móvil. */
+a[href^="tel:"], p a[href^="https://wa.me"], span > a[href^="https://wa.me"] { white-space: nowrap; }
+a[href^="mailto:"] { overflow-wrap: anywhere; }
 :focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; }
 .sobre-color :focus-visible { outline-color: var(--blanco); }
 p { margin: 0 0 var(--espacio-4); }
@@ -431,6 +434,7 @@ strong { font-weight: 700; }
   .ficha__datos { padding: var(--espacio-3) var(--espacio-4); }
   .cuenta__item { min-width: 0; flex: 1; padding: var(--espacio-2); }
   .hero__acciones, .hero__acciones .ccf-boton { width: 100%; }
+  .direccion__acciones .ccf-boton { width: 100%; padding: 0 var(--espacio-4); }
   .razones { grid-template-columns: minmax(0, 1fr); }
   .cifras { margin-top: var(--espacio-6); }
   .cifra { padding: var(--espacio-5) var(--espacio-4); }
@@ -447,6 +451,12 @@ strong { font-weight: 700; }
   .ccf-banda-icfes--web .contenedor { align-items: flex-start; }
   .barra-movil { display: grid; }
   body { padding-bottom: 72px; }
+}
+/* Teléfonos de 320 px: la cabecera móvil deja solo el escudo y el botón (el hero nombra la sede justo debajo). */
+@media (max-width: 359px) {
+  .cabecera__sede { display: none; }
+  .cabecera__escudo img { height: 40px; }
+  .cabecera .ccf-boton { padding: 0 var(--espacio-3); }
 }
 
 /* ---------- Movimiento reducido ---------- */

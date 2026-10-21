@@ -1,0 +1,11 @@
+[
+ {"role": "hero", "file": "hero.jpg", "alt": "Estudiantes con uniforme rojo caminan sonrientes por un pasillo de ladrillo con ventanales; al fondo se ven los edificios de la ciudadela.", "caption": "Entre clases", "sourceTitle": "CELESTINSOACHA_-94.jpg"},
+ {"role": "hero-mobile", "file": "hero-m.jpg", "alt": "Una niña con falda escocesa y chaleco rojo salta feliz junto a un columpio en un patio de baldosas de colores.", "caption": "Recreo", "sourceTitle": "CELESTINSOACHA_-10.jpg"},
+ {"role": "experiencia", "file": "experiencia.jpg", "alt": "Estudiantes en un patio con juegos infantiles de colores, llantas pintadas y los edificios de ladrillo de Ciudad Verde al fondo.", "caption": "El patio", "sourceTitle": "CELESTINSOACHA_-33.jpg"},
+ {"role": "g1", "file": "g1.jpg", "alt": "Una niña de preescolar dibuja concentrada en su pupitre junto a sus compañeros.", "caption": "Preescolar", "sourceTitle": "CELESTINSOACHA_-22.jpg"},
+ {"role": "g2", "file": "g2.jpg", "alt": "Una niña con diadema blanca sonríe en la sala de cómputo; detrás, un compañero trabaja frente a un computador.", "caption": "Sala de cómputo", "sourceTitle": "CELESTINSOACHA_-144.jpg"},
+ {"role": "g3", "file": "g3.jpg", "alt": "Una adulta acompaña a un estudiante que escribe en su cuaderno dentro del salón.", "caption": "Acompañamiento", "sourceTitle": "CELESTINSOACHA_-100.jpg"},
+ {"role": "g4", "file": "g4.jpg", "alt": "Un estudiante con uniforme de educación física corre con un balón de baloncesto en una cancha azul.", "caption": "Deporte", "sourceTitle": "CELESTINSOACHA_-131.jpg"},
+ {"role": "g5", "file": "g5.jpg", "alt": "Un adulto del colegio levanta en brazos a una niña sonriente frente a un mural de castillo en la zona de preescolar.", "caption": "Alegría en preescolar", "sourceTitle": "CELESTINSOACHA_-156.jpg"},
+ {"role": "g6", "file": "g6.jpg", "alt": "Tres estudiantes sonríen sentadas en un juego del patio y hacen la señal de paz.", "caption": "Descanso", "sourceTitle": "CELESTINSOACHA_-59.jpg"}
+]

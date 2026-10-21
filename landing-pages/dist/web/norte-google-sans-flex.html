@@ -1,0 +1,1078 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Day Sede Norte · Sábado 21 de noviembre · Colegio Célestin Freinet</title>
+<meta name="description" content="Sábado 21 de noviembre, 8:00 a.m. Te invitamos al Open Day de la Sede Norte del Colegio Célestin Freinet: recorre la sede, conoce nuestra propuesta y resuelve tus dudas de admisión 2027. Inscríbete aquí.">
+<meta name="theme-color" content="#7e1438">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:title" content="Open Day Sede Norte · Sábado 21 de noviembre">
+<meta property="og:description" content="Sábado 21 de noviembre, 8:00 a.m. Te invitamos al Open Day de la Sede Norte del Colegio Célestin Freinet: recorre la sede, conoce nuestra propuesta y resuelve tus dudas de admisión 2027. Inscríbete aquí.">
+<link rel="icon" type="image/png" href="assets/logos/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wdth,wght@6..144,25..151,1..1000&display=swap">
+<script>document.documentElement.className += ' js';</script>
+<style>
+/* Propuesta tipográfica: Google Sans Flex en todos los niveles (títulos, cuerpo, botones, cifras y eslogan).
+   Mismos tamaños y jerarquías del sistema; cambia la familia y se usan sus ejes variables:
+   peso (wght 1 a 1000), ancho (wdth 25 a 151) y tamaño óptico automático (opsz).
+   Títulos y cifras ligeramente condensados (como pide un titular en mayúsculas), cuerpo en ancho normal
+   y eslogan ligero y expandido para conservar el carácter geométrico de Josefin Sans. */
+:root {
+  --font-titulos: "Google Sans Flex", "Google Sans", system-ui, sans-serif;
+  --font-cuerpo: "Google Sans Flex", "Google Sans", system-ui, sans-serif;
+  --font-eslogan: "Google Sans Flex", "Google Sans", system-ui, sans-serif;
+  --text-h1: 760 48px/1.04 var(--font-titulos);
+  --text-h2: 700 36px/1.1 var(--font-titulos);
+  --text-h3: 660 28px/1.15 var(--font-titulos);
+  --text-h4: 620 22px/1.25 var(--font-titulos);
+  --text-h5: 600 18px/1.3 var(--font-titulos);
+  --text-h6: 600 16px/1.35 var(--font-titulos);
+  --text-cuerpo: 400 18px/1.6 var(--font-cuerpo);
+  --text-cuerpo-pequeno: 400 16px/1.5 var(--font-cuerpo);
+  --text-nota: 420 14px/1.5 var(--font-cuerpo);
+  --text-intro: 360 22px/1.5 var(--font-cuerpo);
+  --text-etiqueta-web: 700 13px/1.4 var(--font-titulos);
+  --text-boton: 640 16px/1 var(--font-titulos);
+  --text-cifra: 820 56px/1 var(--font-titulos);
+  --text-eslogan: 300 20px/1.4 var(--font-eslogan);
+  /* Ancho por nivel (eje wdth) */
+  --fs-titulos: 88%;
+  --fs-cifra: 82%;
+  --fs-eslogan: 118%;
+  /* Espaciado por nivel */
+  --ls-h1: -.005em;
+  --ls-h2: 0em;
+  --ls-h3: .005em;
+  --ls-h4: .01em;
+  --ls-h5: .015em;
+  --ls-h6: .05em;
+  --ls-eslogan: .16em;
+}
+
+/* Open Day · Colegio Célestin Freinet
+   Tokens y componentes web tomados del sistema de diseño "Célestin Freinet" (tokens.css y components/bundle.css).
+   Reglas: esquinas rectas (radio-ninguno), sin sombras ni degradados, bloques planos, títulos en mayúsculas,
+   movimiento solo con transform y opacity (200 a 500 ms) y respeto de prefers-reduced-motion. */
+
+:root {
+  /* Paleta institucional */
+  --rojo: #7e1438;
+  --azul-oscuro: #172742;
+  --azul-claro: #135c7b;
+  --blanco: #ffffff;
+  --gris-texto: #5a6270;
+  --gris-linea: #c9ced6;
+  --azul-palido: #cadcfc;
+  --escudo-fondo: #e6f2fb;
+  --escudo-manos: #e2a5ae;
+  /* Semánticos (tema blanco) */
+  --superficie: var(--blanco);
+  --tinta: var(--azul-oscuro);
+  --texto: var(--gris-texto);
+  --acento: var(--rojo);
+  --franja: var(--rojo);
+  --sobre-franja: var(--blanco);
+  /* Web */
+  --fondo-suave: #f3f5f7;
+  --exito: #1e7b4a;
+  --error: #b3261e;
+  --foco: var(--azul-claro);
+  --espacio-1: 4px;
+  --espacio-2: 8px;
+  --espacio-3: 12px;
+  --espacio-4: 16px;
+  --espacio-5: 24px;
+  --espacio-6: 32px;
+  --espacio-7: 48px;
+  --espacio-8: 64px;
+  --espacio-seccion: 96px;
+  --ancho-contenido: 1200px;
+  --ancho-texto: 720px;
+  --separacion-bloques: 14.4px;
+  --alto-franja: 32.4px;
+  --radio-ninguno: 0px;
+  /* Movimiento */
+  --dur-corta: 200ms;
+  --dur-media: 350ms;
+  --dur-larga: 500ms;
+  --curva: cubic-bezier(.2, .7, .2, 1);
+  /* Color de la sede (se redefine por página) */
+  --sede: var(--azul-oscuro);
+  --sede-acento: var(--rojo);
+  --alto-cabecera: 80px;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: clip; }
+body {
+  margin: 0;
+  background: var(--superficie);
+  color: var(--texto);
+  font: var(--text-cuerpo);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--azul-claro); text-underline-offset: 3px; }
+a:hover { color: var(--azul-oscuro); }
+/* Los números de teléfono no se parten en dos líneas; los correos largos sí, para no desbordar en móvil. */
+a[href^="tel:"], p a[href^="https://wa.me"], span > a[href^="https://wa.me"] { white-space: nowrap; }
+a[href^="mailto:"] { overflow-wrap: anywhere; }
+:focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; }
+.sobre-color :focus-visible { outline-color: var(--blanco); }
+p { margin: 0 0 var(--espacio-4); }
+h1, h2, h3, h4, h5, h6 { margin: 0; color: var(--tinta); text-transform: uppercase; }
+h1 { font: var(--text-h1); letter-spacing: var(--ls-h1, .01em); }
+h2 { font: var(--text-h2); letter-spacing: var(--ls-h2, .01em); margin-bottom: var(--espacio-4); }
+h3 { font: var(--text-h3); letter-spacing: var(--ls-h3, .01em); margin-bottom: var(--espacio-2); }
+h4 { font: var(--text-h4); letter-spacing: var(--ls-h4, .01em); margin-bottom: var(--espacio-2); }
+h5 { font: var(--text-h5); letter-spacing: var(--ls-h5, .01em); margin-bottom: var(--espacio-1); }
+h6 { font: var(--text-h6); letter-spacing: var(--ls-h6, .04em); color: var(--acento); margin-bottom: var(--espacio-1); }
+h1, h2, h3, h4 { font-stretch: var(--fs-titulos, 100%); }
+strong { font-weight: 700; }
+.solo-movil { display: none; }
+@media (max-width: 767px) { .solo-movil { display: inline; } }
+.visualmente-oculto { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.saltar { position: absolute; left: var(--espacio-4); top: -100px; z-index: 100; padding: var(--espacio-3) var(--espacio-4); background: var(--blanco); color: var(--azul-oscuro); font: var(--text-boton); text-transform: uppercase; }
+.saltar:focus { top: var(--espacio-2); }
+
+.contenedor { width: 100%; max-width: calc(var(--ancho-contenido) + 2 * var(--espacio-4)); margin: 0 auto; padding: 0 var(--espacio-4); }
+.seccion { padding: var(--espacio-seccion) 0; scroll-margin-top: var(--alto-cabecera); }
+.seccion--suave { background: var(--fondo-suave); }
+.seccion--sede { background: var(--sede); color: var(--blanco); }
+.seccion__cabeza { max-width: var(--ancho-texto); margin-bottom: var(--espacio-7); }
+.seccion__cabeza p { font: var(--text-intro); color: var(--texto); margin: 0; }
+.sobre-color, .sobre-color p { color: var(--blanco); }
+.sobre-color h1, .sobre-color h2, .sobre-color h3, .sobre-color h4, .sobre-color h5 { color: var(--blanco); }
+.sobre-color h6 { color: var(--blanco); }
+
+/* ---------- Textos del sistema ---------- */
+.ccf-intro { font: var(--text-intro); }
+.ccf-nota { font: var(--text-nota); }
+.ccf-eslogan { font: var(--text-eslogan); letter-spacing: var(--ls-eslogan, .12em); text-transform: uppercase; color: var(--tinta); font-stretch: var(--fs-eslogan, 100%); }
+.ccf-cifra { font: var(--text-cifra); color: var(--rojo); font-stretch: var(--fs-cifra, 100%); font-variant-numeric: tabular-nums; }
+.ccf-etiqueta { display: inline-block; padding: var(--espacio-1) var(--espacio-3); font: var(--text-etiqueta-web); letter-spacing: .08em; text-transform: uppercase; color: var(--acento); border: 2px solid var(--acento); border-radius: var(--radio-ninguno); }
+.ccf-etiqueta--relleno { background: var(--rojo); border-color: var(--rojo); color: var(--blanco); }
+.ccf-etiqueta--blanca { background: var(--blanco); border-color: var(--blanco); color: var(--azul-oscuro); }
+.ccf-etiqueta--contorno-claro { border-color: var(--blanco); color: var(--blanco); }
+
+/* ---------- BotonWeb ---------- */
+.ccf-boton {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--espacio-2);
+  min-height: 48px; padding: 0 var(--espacio-5);
+  border: 2px solid var(--rojo); background: var(--rojo); color: var(--blanco);
+  font: var(--text-boton); letter-spacing: .06em; text-transform: uppercase; text-decoration: none;
+  cursor: pointer; border-radius: var(--radio-ninguno);
+  transition: background-color var(--dur-corta) ease, border-color var(--dur-corta) ease, color var(--dur-corta) ease, transform var(--dur-corta) var(--curva);
+}
+.ccf-boton:hover { background: var(--azul-oscuro); border-color: var(--azul-oscuro); color: var(--blanco); }
+.ccf-boton:active { transform: translateY(1px); }
+.ccf-boton--secundario { background: transparent; color: var(--azul-oscuro); border-color: var(--azul-oscuro); }
+.ccf-boton--secundario:hover { background: var(--azul-oscuro); color: var(--blanco); }
+.ccf-boton--claro { background: var(--blanco); color: var(--azul-oscuro); border-color: var(--blanco); }
+.ccf-boton--claro:hover { background: var(--rojo); border-color: var(--rojo); color: var(--blanco); }
+.ccf-boton--contorno-claro { background: transparent; color: var(--blanco); border-color: var(--blanco); }
+.ccf-boton--contorno-claro:hover { background: var(--blanco); color: var(--azul-oscuro); }
+.ccf-boton--whatsapp { background: var(--azul-claro); border-color: var(--azul-claro); color: var(--blanco); }
+.ccf-boton--whatsapp:hover { background: var(--azul-oscuro); border-color: var(--azul-oscuro); }
+/* Sobre bloques rojos el hover del botón claro no puede volverse rojo: pasa a azul-oscuro. */
+.fondo-rojo .ccf-boton--claro:hover { background: var(--azul-oscuro); border-color: var(--azul-oscuro); }
+.fondo-azul-claro .ccf-boton--whatsapp, .fondo-azul-claro .ccf-boton--whatsapp:hover { border-color: var(--blanco); }
+.ccf-boton--grande { min-height: 56px; padding: 0 var(--espacio-6); }
+.ccf-boton__flecha { display: inline-block; width: 10px; height: 10px; border-top: 2px solid currentColor; border-right: 2px solid currentColor; transform: rotate(45deg); margin-left: 2px; transition: transform var(--dur-corta) var(--curva); }
+.ccf-boton:hover .ccf-boton__flecha { transform: translateX(3px) rotate(45deg); }
+
+/* ---------- Barra de utilidades y cabecera ---------- */
+.utilidades { background: var(--azul-oscuro); color: var(--blanco); font: var(--text-nota); }
+.utilidades .contenedor { display: flex; align-items: center; justify-content: space-between; gap: var(--espacio-4); min-height: 40px; }
+.utilidades a { color: var(--blanco); text-decoration: none; }
+.utilidades a:hover { text-decoration: underline; color: var(--blanco); }
+.utilidades__evento { display: flex; align-items: center; gap: var(--espacio-3); font: var(--text-etiqueta-web); letter-spacing: .08em; text-transform: uppercase; }
+.utilidades__punto { width: 8px; height: 8px; background: var(--escudo-manos); flex: none; }
+.utilidades__enlaces { display: flex; gap: var(--espacio-5); }
+
+.cabecera { position: sticky; top: 0; z-index: 50; background: var(--blanco); border-bottom: 1px solid var(--gris-linea); transition: transform var(--dur-media) var(--curva); }
+.cabecera .contenedor { display: flex; align-items: center; gap: var(--espacio-6); min-height: var(--alto-cabecera); }
+.cabecera__logo { display: block; flex: none; }
+.cabecera__logo img { height: 56px; width: auto; }
+.cabecera__escudo { display: none; }
+.cabecera__nav { display: flex; gap: var(--espacio-5); margin: 0 auto; padding: 0; list-style: none; }
+.cabecera__nav a { display: inline-block; font: var(--text-h6); letter-spacing: .04em; text-transform: uppercase; color: var(--tinta); text-decoration: none; padding: var(--espacio-2) 0; border-bottom: 3px solid transparent; transition: border-color var(--dur-corta) ease; }
+.cabecera__nav a:hover, .cabecera__nav a[aria-current="true"] { border-bottom-color: var(--rojo); color: var(--tinta); }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; background: var(--sede); color: var(--blanco); overflow: hidden; }
+.hero .contenedor { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--espacio-7); align-items: center; padding-top: var(--espacio-8); padding-bottom: var(--espacio-8); }
+.hero__texto { display: flex; flex-direction: column; align-items: flex-start; gap: var(--espacio-5); max-width: var(--ancho-texto); }
+.hero__texto h1 { color: var(--blanco); }
+.hero__intro { font: var(--text-intro); color: var(--blanco); margin: 0; max-width: 34em; }
+.hero__acciones { display: flex; flex-wrap: wrap; gap: var(--espacio-3); }
+.hero .ccf-eslogan { color: var(--blanco); }
+.hero__vertical { position: absolute; right: 14px; top: 50%; transform: translateY(-50%) rotate(180deg); writing-mode: vertical-rl; font: var(--text-eslogan); font-size: 14px; letter-spacing: .3em; text-transform: uppercase; color: var(--blanco); opacity: .55; font-stretch: var(--fs-eslogan, 100%); }
+
+/* Ficha del evento (fecha, hora, lugar) */
+.ficha { display: grid; grid-template-columns: auto 1fr; width: 100%; max-width: 560px; background: var(--blanco); color: var(--azul-oscuro); }
+.ficha__fecha { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: var(--espacio-4) var(--espacio-5); background: var(--sede-acento); color: var(--blanco); min-width: 120px; }
+.ficha__dia { font: var(--text-cifra); color: var(--blanco); font-stretch: var(--fs-cifra, 100%); }
+.ficha__mes { font: var(--text-h5); letter-spacing: .12em; color: var(--blanco); }
+.ficha__datos { padding: var(--espacio-4) var(--espacio-5); display: grid; gap: var(--espacio-1); align-content: center; }
+.ficha__semana { font: var(--text-h5); text-transform: uppercase; letter-spacing: .04em; color: var(--azul-oscuro); }
+.ficha p.ficha__linea { font: var(--text-cuerpo-pequeno); color: var(--gris-texto); margin: 0; }
+.ficha p.ficha__linea strong { color: var(--azul-oscuro); }
+
+/* Cuenta regresiva */
+.cuenta { display: flex; align-items: stretch; gap: var(--espacio-2); }
+.cuenta__item { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 72px; padding: var(--espacio-2) var(--espacio-3); border: 2px solid currentColor; }
+.cuenta__num { display: block; font: var(--text-h2); line-height: 1; font-variant-numeric: tabular-nums; margin: 0; font-stretch: var(--fs-titulos, 100%); }
+.cuenta__num.cambia { animation: cambia var(--dur-media) var(--curva); }
+@keyframes cambia { from { opacity: 0; transform: translateY(-40%); } to { opacity: 1; transform: none; } }
+.cuenta__lbl { font: var(--text-etiqueta-web); letter-spacing: .08em; text-transform: uppercase; margin-top: var(--espacio-1); }
+.cuenta--oscura { color: var(--azul-oscuro); }
+.cuenta__aviso { font: var(--text-cuerpo-pequeno); margin: 0; }
+
+/* Composición de imagen del hero con bloques planos ("una marca, cuatro sedes") */
+.hero__media { position: relative; padding: 0 0 112px var(--espacio-6); }
+.hero__bloque { position: absolute; left: 0; bottom: 0; width: 52%; height: 64%; background: var(--sede-acento); }
+.fondo-azul-claro .hero__bloque, .fondo-rojo .hero__bloque { background: var(--azul-oscuro); }
+.hero__barras { position: absolute; left: var(--espacio-6); bottom: var(--espacio-5); display: grid; gap: 10px; width: 36%; z-index: 2; }
+.hero__barras span { display: block; height: 10px; background: var(--blanco); transform-origin: left center; }
+.hero__foto { position: relative; z-index: 1; overflow: hidden; background: var(--azul-claro); aspect-ratio: 4 / 3; }
+.hero__foto img { width: 100%; height: 100%; object-fit: cover; }
+.hero__sello { position: absolute; z-index: 3; right: calc(-1 * var(--espacio-4)); top: var(--espacio-6); background: var(--blanco); padding: var(--espacio-3) var(--espacio-4); display: grid; gap: 2px; text-align: left; }
+.hero__sello strong { font: var(--text-h4); color: var(--azul-oscuro); text-transform: uppercase; display: block; font-stretch: var(--fs-titulos, 100%); }
+.hero__sello span { font: var(--text-etiqueta-web); letter-spacing: .08em; text-transform: uppercase; color: var(--rojo); }
+
+/* ---------- Franja de credenciales ---------- */
+.credenciales { border-bottom: 1px solid var(--gris-linea); background: var(--blanco); }
+.credenciales ul { list-style: none; margin: 0 auto; padding: var(--espacio-5) var(--espacio-4); max-width: calc(var(--ancho-contenido) + 2 * var(--espacio-4)); display: flex; flex-wrap: wrap; justify-content: center; gap: var(--espacio-3) var(--espacio-6); }
+.credenciales li { display: flex; align-items: center; gap: var(--espacio-2); font: var(--text-h6); letter-spacing: .04em; text-transform: uppercase; color: var(--azul-oscuro); }
+.credenciales li::before { content: ""; width: 8px; height: 8px; background: var(--rojo); flex: none; }
+
+/* ---------- Registro (FormularioWeb) ---------- */
+.registro { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: var(--espacio-7); align-items: start; }
+.registro__info h2 { margin-bottom: var(--espacio-4); }
+.registro__lista { list-style: none; margin: var(--espacio-5) 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--gris-linea); }
+.registro__lista li { display: grid; grid-template-columns: 112px 1fr; gap: var(--espacio-4); padding: var(--espacio-3) 0; border-bottom: 1px solid var(--gris-linea); }
+.registro__lista dt, .registro__lbl { font: var(--text-etiqueta-web); letter-spacing: .08em; text-transform: uppercase; color: var(--acento); padding-top: 4px; }
+.registro__val { font: var(--text-cuerpo-pequeno); color: var(--azul-oscuro); }
+.registro__val strong { display: block; }
+.registro__acciones { display: flex; flex-wrap: wrap; gap: var(--espacio-3); align-items: center; }
+.gancho { display: grid; grid-template-columns: 8px 1fr; gap: var(--espacio-4); padding: var(--espacio-4) var(--espacio-5); background: var(--blanco); border: 2px solid var(--rojo); margin-bottom: var(--espacio-5); }
+.gancho::before { content: ""; background: var(--rojo); }
+.gancho h3 { font: var(--text-h5); color: var(--rojo); margin: 0 0 var(--espacio-1); }
+.gancho p { margin: 0; font: var(--text-cuerpo-pequeno); color: var(--azul-oscuro); }
+.tarjeta-form { background: var(--blanco); border: 1px solid var(--gris-linea); }
+.tarjeta-form__banda { height: 8px; background: var(--sede); }
+.tarjeta-form__cuerpo { padding: var(--espacio-6); }
+.tarjeta-form__cabeza { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--espacio-2) var(--espacio-4); padding-bottom: var(--espacio-4); margin-bottom: var(--espacio-4); border-bottom: 1px solid var(--gris-linea); }
+.tarjeta-form__cabeza h6 { margin: 0; }
+.tarjeta-form__cabeza p { margin: 0; font: var(--text-nota); color: var(--texto); }
+.ccf-ranura-formulario { position: relative; min-height: 420px; }
+.ccf-ranura-formulario__carga { display: grid; place-items: center; align-content: center; gap: var(--espacio-3); min-height: 420px; padding: var(--espacio-5); border: 2px dashed var(--gris-texto); background: var(--fondo-suave); color: var(--texto); text-align: center; font: var(--text-cuerpo-pequeno); }
+.ccf-ranura-formulario.cargado .ccf-ranura-formulario__carga { display: none; }
+.ccf-ranura-formulario .hs-form-frame { width: 100%; }
+
+/* ---------- Experiencia ---------- */
+.experiencia { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: var(--espacio-7); align-items: center; }
+.experiencia__foto { position: relative; overflow: hidden; aspect-ratio: 16 / 10; background: var(--fondo-suave); }
+.experiencia__foto img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); transition: transform 500ms var(--curva); }
+.experiencia__foto.visible img { transform: none; }
+.lista-numerada { list-style: none; margin: 0; padding: 0; counter-reset: item; display: grid; gap: var(--espacio-5); }
+.lista-numerada li { counter-increment: item; display: grid; grid-template-columns: 48px 1fr; gap: var(--espacio-4); align-items: start; }
+.lista-numerada li::before { content: counter(item, decimal-leading-zero); display: grid; place-items: center; width: 48px; height: 48px; background: var(--sede); color: var(--blanco); font: var(--text-h5); letter-spacing: .02em; }
+.lista-numerada h3 { font: var(--text-h4); margin: 0 0 var(--espacio-1); }
+.lista-numerada p { margin: 0; font: var(--text-cuerpo-pequeno); }
+
+/* ---------- Por qué la sede ---------- */
+.razones { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--espacio-5); }
+.razon { position: relative; display: flex; flex-direction: column; gap: var(--espacio-3); padding: var(--espacio-5); background: var(--blanco); border: 1px solid var(--gris-linea); transition: transform var(--dur-media) var(--curva), border-color var(--dur-media) ease; }
+.razon:hover { transform: translateY(-4px); border-color: var(--azul-oscuro); }
+.razon__num { font: var(--text-etiqueta-web); letter-spacing: .08em; color: var(--acento); }
+.razon__marca { width: 32px; height: 8px; background: var(--sede); transform-origin: left center; transition: transform var(--dur-larga) var(--curva); }
+.razon:hover .razon__marca { transform: scaleX(1.75); }
+.razon h3 { font: var(--text-h4); margin: 0; }
+.razon p { margin: 0; font: var(--text-cuerpo-pequeno); }
+
+.cifras { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin-top: var(--espacio-7); background: var(--sede); color: var(--blanco); }
+.cifra { padding: var(--espacio-6) var(--espacio-5); border-left: 1px solid rgba(255, 255, 255, .28); }
+.cifra:first-child { border-left: 0; }
+.cifra .ccf-cifra { color: var(--blanco); display: block; white-space: nowrap; }
+.cifra__suf, .cifra__pre { font-size: .55em; letter-spacing: .02em; }
+.cifra p { margin: var(--espacio-2) 0 0; font: var(--text-cuerpo-pequeno); color: var(--blanco); }
+
+/* ---------- Pilares (bloques planos) ---------- */
+.pilares { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--separacion-bloques); }
+.pilar { padding: var(--espacio-6) var(--espacio-5); color: var(--blanco); min-height: 100%; }
+.pilar--rojo { background: var(--rojo); }
+.pilar--azul-oscuro { background: var(--azul-oscuro); }
+.pilar--azul-claro { background: var(--azul-claro); }
+.pilar h3 { color: var(--blanco); font: var(--text-h3); margin-bottom: var(--espacio-3); }
+.pilar .pilar__texto { font: var(--text-cuerpo-pequeno); color: var(--blanco); margin: 0 0 var(--espacio-5); padding-bottom: var(--espacio-5); border-bottom: 1px solid rgba(255, 255, 255, .3); }
+.pilar ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--espacio-3); }
+.pilar li { display: grid; grid-template-columns: 8px 1fr; gap: var(--espacio-3); font: var(--text-cuerpo-pequeno); color: var(--blanco); }
+.pilar li::before { content: ""; width: 8px; height: 8px; margin-top: 9px; background: var(--blanco); }
+.pilar__num { display: block; font: var(--text-etiqueta-web); letter-spacing: .08em; text-transform: uppercase; color: var(--blanco); margin-bottom: var(--espacio-3); }
+
+/* ---------- Galería (carrusel sin autoplay) ---------- */
+.galeria__cabeza { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--espacio-5); margin-bottom: var(--espacio-6); }
+.galeria__cabeza .seccion__cabeza { margin-bottom: 0; }
+.galeria__controles { display: flex; gap: var(--espacio-2); }
+.galeria__btn { width: 48px; height: 48px; display: grid; place-items: center; border: 2px solid var(--azul-oscuro); background: transparent; color: var(--azul-oscuro); cursor: pointer; border-radius: var(--radio-ninguno); transition: background-color var(--dur-corta) ease, color var(--dur-corta) ease; }
+.galeria__btn:hover { background: var(--azul-oscuro); color: var(--blanco); }
+.galeria__btn[disabled] { opacity: .35; cursor: default; background: transparent; color: var(--azul-oscuro); }
+.galeria__btn span { width: 12px; height: 12px; border-top: 2px solid currentColor; border-right: 2px solid currentColor; transform: rotate(45deg); margin-left: -4px; }
+.galeria__btn--prev span { transform: rotate(-135deg); margin-left: 4px; }
+.galeria__pista { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 2 * var(--espacio-5)) / 3); gap: var(--espacio-5); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: var(--espacio-2); }
+.galeria__pista::-webkit-scrollbar { display: none; }
+.galeria__item { scroll-snap-align: start; margin: 0; }
+.galeria__marco { overflow: hidden; aspect-ratio: 4 / 3; background: var(--fondo-suave); }
+.galeria__marco img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-larga) var(--curva); }
+.galeria__item:hover .galeria__marco img { transform: scale(1.04); }
+.galeria__item figcaption { display: flex; align-items: center; gap: var(--espacio-2); margin-top: var(--espacio-3); font: var(--text-h6); letter-spacing: .04em; text-transform: uppercase; color: var(--azul-oscuro); }
+.galeria__item figcaption::before { content: ""; width: 8px; height: 8px; background: var(--sede); flex: none; }
+
+/* ---------- PasosAdmision ---------- */
+.ccf-pasos { counter-reset: paso; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--espacio-5); }
+.ccf-pasos li { counter-increment: paso; position: relative; padding-top: var(--espacio-7); }
+.ccf-pasos li::before { content: counter(paso, decimal-leading-zero); position: absolute; top: 0; left: 0; width: 40px; height: 40px; display: grid; place-items: center; background: var(--rojo); color: var(--blanco); font: var(--text-h5); letter-spacing: .02em; z-index: 1; }
+.ccf-pasos li::after { content: ""; position: absolute; top: 19px; left: 48px; right: -24px; height: 2px; background: var(--gris-linea); transform-origin: left center; transform: scaleX(var(--linea, 1)); transition: transform var(--dur-larga) var(--curva); }
+.ccf-pasos li:last-child::after { display: none; }
+.ccf-pasos h3 { font: var(--text-h5); text-transform: uppercase; color: var(--tinta); margin: 0 0 var(--espacio-1); }
+.ccf-pasos p { font: var(--text-cuerpo-pequeno); margin: 0; }
+.ccf-pasos .paso--actual::before { background: var(--azul-oscuro); outline: 3px solid var(--rojo); outline-offset: 3px; }
+.paso__marca { display: inline-block; margin-top: var(--espacio-2); }
+[data-reveal-grupo] .ccf-pasos li::after { --linea: 0; }
+[data-reveal-grupo].visible .ccf-pasos li::after { --linea: 1; }
+
+/* ---------- Por qué nos eligen y logros ---------- */
+.eligen { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--espacio-7); align-items: start; }
+.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--espacio-2); }
+.chips li { padding: var(--espacio-2) var(--espacio-4); border: 2px solid var(--azul-oscuro); color: var(--azul-oscuro); font: var(--text-h6); letter-spacing: .04em; text-transform: uppercase; }
+.logros { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--gris-linea); }
+.logros li { display: grid; grid-template-columns: 24px 1fr; gap: var(--espacio-3); align-items: center; padding: var(--espacio-3) 0; border-bottom: 1px solid var(--gris-linea); font: var(--text-h5); text-transform: uppercase; color: var(--azul-oscuro); letter-spacing: .01em; }
+.logros li::before { content: ""; width: 16px; height: 16px; background: var(--rojo); }
+
+/* ---------- Preguntas frecuentes ---------- */
+.faq { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: var(--espacio-7); align-items: start; }
+.faq__lista { border-top: 1px solid var(--gris-linea); }
+.faq details { border-bottom: 1px solid var(--gris-linea); }
+.faq summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: var(--espacio-4); padding: var(--espacio-5) 0; cursor: pointer; font: var(--text-h5); text-transform: uppercase; color: var(--azul-oscuro); letter-spacing: .01em; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: ""; flex: none; width: 12px; height: 12px; border-right: 2px solid var(--rojo); border-bottom: 2px solid var(--rojo); transform: rotate(45deg); transition: transform var(--dur-media) var(--curva); margin-right: 4px; }
+.faq details[open] summary::after { transform: rotate(-135deg); }
+.faq__resp { padding: 0 0 var(--espacio-5); max-width: 62ch; }
+.faq__resp p { margin: 0; }
+.faq details[open] .faq__resp { animation: abre var(--dur-media) var(--curva); }
+@keyframes abre { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Ubicación y datos ---------- */
+.ubicacion { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--espacio-7); align-items: start; }
+.datos { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--gris-linea); }
+.datos div { display: grid; grid-template-columns: 128px 1fr; gap: var(--espacio-4); padding: var(--espacio-3) 0; border-bottom: 1px solid var(--gris-linea); }
+.datos dt { font: var(--text-etiqueta-web); letter-spacing: .08em; text-transform: uppercase; color: var(--acento); padding-top: 4px; }
+.datos dd { margin: 0; font: var(--text-cuerpo-pequeno); color: var(--azul-oscuro); }
+.direccion { background: var(--azul-oscuro); color: var(--blanco); padding: var(--espacio-6); display: grid; gap: var(--espacio-4); }
+.direccion h3 { color: var(--blanco); }
+.direccion p { margin: 0; color: var(--blanco); }
+.direccion__acciones { display: flex; flex-wrap: wrap; gap: var(--espacio-3); margin-top: var(--espacio-2); }
+.direccion__contacto { font: var(--text-cuerpo-pequeno); color: var(--azul-palido); }
+.direccion__contacto a { color: var(--blanco); }
+
+/* ---------- Cierre ---------- */
+.cierre { position: relative; overflow: hidden; background: var(--sede); color: var(--blanco); padding: var(--espacio-seccion) 0; }
+.cierre .contenedor { position: relative; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: var(--espacio-7); align-items: center; }
+.cierre h2 { color: var(--blanco); font: var(--text-h1); letter-spacing: var(--ls-h1, .01em); margin-bottom: var(--espacio-4); }
+.cierre p { color: var(--blanco); font: var(--text-intro); margin: 0 0 var(--espacio-5); }
+.cierre__panel { display: grid; gap: var(--espacio-4); justify-items: start; }
+.cierre__barras { position: absolute; right: 0; top: 0; bottom: 0; width: calc((100vw - var(--ancho-contenido)) / 2 - var(--espacio-6)); display: grid; align-content: center; gap: var(--separacion-bloques); opacity: .14; }
+@media (max-width: 1400px) { .cierre__barras { display: none; } }
+.cierre__barras span { display: block; height: 32px; background: var(--blanco); transform-origin: right center; }
+
+/* ---------- Pie (PieWeb) ---------- */
+.ccf-pie { background: var(--azul-oscuro); color: var(--blanco); font: var(--text-cuerpo-pequeno); }
+.ccf-pie a { color: var(--blanco); text-decoration: none; }
+.ccf-pie a:hover { text-decoration: underline; color: var(--blanco); }
+.ccf-pie__columnas { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: var(--espacio-6); padding: var(--espacio-8) var(--espacio-4); }
+.ccf-pie h3 { font: var(--text-h6); letter-spacing: .04em; text-transform: uppercase; color: var(--escudo-manos); margin: 0 0 var(--espacio-3); }
+.ccf-pie ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--espacio-2); }
+.ccf-pie__logo img { height: 56px; width: auto; margin-bottom: var(--espacio-4); }
+.ccf-pie__redes { display: flex; gap: var(--espacio-3); margin-top: var(--espacio-2); }
+.ccf-pie__redes a { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid rgba(255, 255, 255, .5); }
+.ccf-pie__redes a:hover { background: var(--blanco); color: var(--azul-oscuro); }
+.ccf-pie__redes svg { width: 18px; height: 18px; fill: currentColor; }
+.ccf-pie__sedes { display: grid; gap: var(--separacion-bloques); }
+.ccf-sede { display: flex; align-items: center; min-height: 40px; padding: 0 var(--separacion-bloques); color: var(--sobre-franja); font: var(--text-h6); letter-spacing: .04em; text-transform: uppercase; }
+.ccf-sede--rojo { background: var(--rojo); }
+.ccf-sede--azul-claro { background: var(--azul-claro); }
+.ccf-sede--azul-oscuro { background: var(--azul-oscuro); outline: 1px solid rgba(255, 255, 255, .5); outline-offset: -1px; }
+.ccf-sede[aria-current="true"] { box-shadow: none; outline: 2px solid var(--blanco); outline-offset: -2px; }
+.ccf-pie__legal { padding: var(--espacio-4); border-top: 1px solid rgba(255, 255, 255, .25); font: var(--text-nota); color: var(--azul-palido); }
+.ccf-pie__legal .contenedor { padding: 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--espacio-3); }
+.ccf-pie__legal .ccf-eslogan { color: var(--blanco); font-size: 14px; }
+/* BandaIcfes, variante web */
+.ccf-banda-icfes { box-sizing: border-box; background: var(--franja); color: var(--sobre-franja); font: var(--text-h6); letter-spacing: .04em; text-transform: uppercase; border-radius: var(--radio-ninguno); }
+.ccf-banda-icfes strong { font-weight: inherit; }
+.ccf-banda-icfes--web .contenedor { display: flex; align-items: center; gap: var(--espacio-4); padding-top: var(--espacio-3); padding-bottom: var(--espacio-3); }
+.ccf-banda-icfes--web img { height: 40px; width: auto; flex: none; background: var(--blanco); padding: 4px; }
+
+/* ---------- Barra fija en móvil ---------- */
+.barra-movil { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; display: none; grid-template-columns: 1fr auto; gap: var(--espacio-2); padding: var(--espacio-2) var(--espacio-4) calc(var(--espacio-2) + env(safe-area-inset-bottom)); background: var(--blanco); border-top: 1px solid var(--gris-linea); transform: translateY(110%); transition: transform var(--dur-media) var(--curva); }
+.barra-movil.visible { transform: none; }
+.barra-movil .ccf-boton { width: 100%; padding: 0 var(--espacio-4); }
+
+/* ---------- Revelado al hacer scroll ---------- */
+.js [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity var(--dur-larga) var(--curva), transform var(--dur-larga) var(--curva); transition-delay: var(--retardo, 0ms); }
+.js [data-reveal="izq"] { transform: translateX(-24px); }
+.js [data-reveal="der"] { transform: translateX(24px); }
+.js [data-reveal="escala"] { transform: scale(.96); }
+.js [data-reveal].visible { opacity: 1; transform: none; }
+/* Entrada del hero */
+.js .hero [data-entrada] { opacity: 0; transform: translateY(20px); }
+.js .hero.listo [data-entrada] { opacity: 1; transform: none; transition: opacity var(--dur-larga) var(--curva), transform var(--dur-larga) var(--curva); transition-delay: var(--retardo, 0ms); }
+.js .hero .hero__foto img { transform: scale(1.08); }
+.js .hero.listo .hero__foto img { transform: none; transition: transform 500ms var(--curva) 150ms; }
+.js .hero .hero__barras span { transform: scaleX(0); }
+.js .hero.listo .hero__barras span { transform: none; transition: transform var(--dur-larga) var(--curva); transition-delay: var(--retardo, 0ms); }
+.js .hero .hero__bloque { transform: translate(-24px, 24px); opacity: 0; }
+.js .hero.listo .hero__bloque { transform: none; opacity: 1; transition: transform var(--dur-larga) var(--curva) 100ms, opacity var(--dur-larga) var(--curva) 100ms; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1320px) {
+  .hero__vertical { display: none; }
+}
+@media (max-width: 1100px) {
+  .razones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ccf-pasos { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: var(--espacio-6); }
+  .ccf-pasos li:nth-child(3)::after { display: none; }
+  .ccf-pie__columnas { grid-template-columns: 1fr 1fr; }
+  .cabecera__nav { display: none; }
+  .cabecera .ccf-boton { margin-left: auto; }
+}
+@media (max-width: 900px) {
+  .hero .contenedor, .registro, .experiencia, .eligen, .faq, .ubicacion, .cierre .contenedor { grid-template-columns: minmax(0, 1fr); }
+  .hero__media { padding: 0 0 72px var(--espacio-5); }
+  .hero__barras { left: var(--espacio-5); bottom: var(--espacio-4); width: 44%; gap: 8px; }
+  .hero__barras span { height: 8px; }
+  .pilares { grid-template-columns: minmax(0, 1fr); }
+  .cifras { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cifra:nth-child(3) { border-left: 0; }
+  .cifra:nth-child(n+3) { border-top: 1px solid rgba(255, 255, 255, .28); }
+  .galeria__pista { grid-auto-columns: calc((100% - var(--espacio-5)) / 2); }
+  .cierre__barras { display: none; }
+}
+@media (max-width: 767px) {
+  :root { --espacio-seccion: 64px; --alto-cabecera: 64px; }
+  h1, .cierre h2 { font-size: 36px; }
+  h2 { font-size: 28px; }
+  .utilidades__enlaces { display: none; }
+  .cabecera .contenedor { gap: var(--espacio-3); }
+  .cabecera__logo { display: none; }
+  .cabecera__escudo { display: block; }
+  .cabecera__escudo img { height: 44px; width: auto; }
+  .cabecera__sede { font: var(--text-h6); letter-spacing: .04em; text-transform: uppercase; color: var(--azul-oscuro); line-height: 1.2; }
+  .cabecera .ccf-boton { min-height: 44px; padding: 0 var(--espacio-4); }
+  .solo-escritorio { display: none; }
+  .credenciales ul { justify-content: flex-start; gap: var(--espacio-2) var(--espacio-5); }
+  .utilidades__punto { display: none; }
+  .hero .contenedor { padding-top: var(--espacio-5); padding-bottom: var(--espacio-7); gap: var(--espacio-5); }
+  .hero__vertical { display: none; }
+  .hero__sello { right: 0; top: var(--espacio-3); padding: var(--espacio-2) var(--espacio-3); }
+  .hero__sello strong { font-size: 18px; }
+  .ficha__fecha { min-width: 96px; padding: var(--espacio-3); }
+  .ficha__datos { padding: var(--espacio-3) var(--espacio-4); }
+  .cuenta__item { min-width: 0; flex: 1; padding: var(--espacio-2); }
+  .hero__acciones, .hero__acciones .ccf-boton { width: 100%; }
+  .direccion__acciones .ccf-boton { width: 100%; padding: 0 var(--espacio-4); }
+  .razones { grid-template-columns: minmax(0, 1fr); }
+  .cifras { margin-top: var(--espacio-6); }
+  .cifra { padding: var(--espacio-5) var(--espacio-4); }
+  .cifra .ccf-cifra { font-size: 36px; white-space: normal; }
+  .galeria__pista { grid-auto-columns: 86%; }
+  .galeria__controles { display: none; }
+  .ccf-pasos { grid-template-columns: minmax(0, 1fr); }
+  .ccf-pasos li { padding-top: 0; padding-left: 64px; min-height: 40px; }
+  .ccf-pasos li::after { display: block !important; top: 48px; bottom: -24px; left: 19px; right: auto; width: 2px; height: auto; transform-origin: top center; transform: scaleY(var(--linea, 1)); }
+  .ccf-pasos li:last-child::after { display: none !important; }
+  .tarjeta-form__cuerpo { padding: var(--espacio-5) var(--espacio-4); }
+  .registro__lista li, .datos div { grid-template-columns: 96px 1fr; }
+  .ccf-pie__columnas { grid-template-columns: minmax(0, 1fr); padding: var(--espacio-7) var(--espacio-4); }
+  .ccf-banda-icfes--web .contenedor { align-items: flex-start; }
+  .barra-movil { display: grid; }
+  body { padding-bottom: 72px; }
+}
+/* Teléfonos de 320 px: la cabecera móvil deja solo el escudo y el botón (el hero nombra la sede justo debajo). */
+@media (max-width: 359px) {
+  .cabecera__sede { display: none; }
+  .cabecera__escudo img { height: 40px; }
+  .cabecera .ccf-boton { padding: 0 var(--espacio-3); }
+}
+
+/* ---------- Movimiento reducido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js [data-reveal], .js .hero [data-entrada], .js .hero .hero__foto img, .js .hero .hero__barras span, .js .hero .hero__bloque, .experiencia__foto img { opacity: 1 !important; transform: none !important; }
+  .razon:hover, .galeria__item:hover .galeria__marco img { transform: none; }
+  [data-reveal-grupo] .ccf-pasos li::after { --linea: 1; }
+}
+
+:root { --sede: var(--rojo); --sede-acento: var(--azul-oscuro); }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"EducationEvent","name":"Open Day Sede Norte · Colegio Célestin Freinet","description":"Jornada de puertas abiertas de la Sede Norte para familias interesadas en la admisión 2027.","startDate":"2026-11-21T08:00:00-05:00","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","inLanguage":"es-CO","location":{"@type":"Place","name":"Colegio Célestin Freinet, Sede Norte","address":{"@type":"PostalAddress","streetAddress":"Km 6 vía Suba-Cota","addressLocality":"Bogotá","addressRegion":"Bogotá D.C.","addressCountry":"CO"}},"organizer":{"@type":"EducationalOrganization","name":"Colegio de Educación Técnica y Académica Célestin Freinet","url":"https://celestinfreinet.edu.co/","telephone":"+57 316 010 6741"}}]}</script>
+</head>
+<body class="tema-google-sans-flex sede-norte">
+<a class="saltar" href="#reserva">Ir al formulario de inscripción</a>
+
+<div class="utilidades">
+  <div class="contenedor">
+    <p class="utilidades__evento" style="margin:0"><span class="utilidades__punto" aria-hidden="true"></span>Open Day · Sábado 21 de noviembre · 8:00 a.m.</p>
+    <div class="utilidades__enlaces">
+      <a href="https://wa.me/573160106741?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20Open%20Day%20de%20la%20Sede%20Norte%20del%20s%C3%A1bado%2021%20de%20noviembre." target="_blank" rel="noopener">WhatsApp +57 316 010 6741</a>
+      <a href="tel:+576017437661">PBX 601 743 7661</a>
+    </div>
+  </div>
+</div>
+
+<header class="cabecera">
+  <div class="contenedor">
+    <a class="cabecera__logo" href="#inicio" aria-label="Colegio Célestin Freinet, Sede Norte"><img src="assets/logos/logo-color.png" alt="Colegio Célestin Freinet" width="669" height="168"></a>
+    <a class="cabecera__escudo" href="#inicio" aria-label="Colegio Célestin Freinet"><img src="assets/logos/escudo.png" alt="Escudo Colegio Célestin Freinet" width="117" height="144"></a>
+    <span class="cabecera__escudo cabecera__sede">Open Day<br>Norte</span>
+    <nav aria-label="Secciones">
+      <ul class="cabecera__nav">
+        <li><a href="#open-day">El Open Day</a></li>
+        <li><a href="#sede">La sede</a></li>
+        <li><a href="#admision">Admisión</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+      </ul>
+    </nav>
+    <a class="ccf-boton" href="#reserva"><span class="solo-escritorio">Reserva tu cupo</span><span class="solo-movil">Inscríbete</span></a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero fondo-rojo sobre-color" aria-labelledby="titulo-hero">
+    <div class="contenedor">
+      <div class="hero__texto">
+        <span class="ccf-etiqueta ccf-etiqueta--blanca" data-entrada style="--retardo:0ms">Open Day · Sede Norte</span>
+        <h1 id="titulo-hero" data-entrada style="--retardo:80ms">Conoce la Sede Norte, nuestro colegio campestre</h1>
+        <p class="hero__intro" data-entrada style="--retardo:160ms">Un espacio amplio, tranquilo, donde se respira aire puro. Ven a nuestro Open Day: recorre el campus con tu hijo o hija y resuelve tus dudas de admisión 2027, de prejardín a 9.°.</p>
+        <div class="ficha" data-entrada style="--retardo:240ms">
+          <div class="ficha__fecha"><span class="ficha__dia">21</span><span class="ficha__mes">NOV</span></div>
+          <div class="ficha__datos">
+            <span class="ficha__semana">Sábado 21 de noviembre</span>
+            <p class="ficha__linea"><strong>8:00 a.m.</strong></p>
+            <p class="ficha__linea">Km 6 vía Suba-Cota, vereda Chorrillos</p>
+          </div>
+        </div>
+        <div data-entrada style="--retardo:320ms">
+        <div class="hero__cuenta">
+          <p class="visualmente-oculto">El Open Day es el sábado 21 de noviembre a las 8:00 a.m.</p>
+          <div class="cuenta " data-cuenta data-objetivo="2026-11-21T08:00:00-05:00" data-siguiente="2026-12-05T08:00:00-05:00" aria-hidden="true">
+            <div class="cuenta__item"><span class="cuenta__num" data-u="d">--</span><span class="cuenta__lbl">días</span></div>
+            <div class="cuenta__item"><span class="cuenta__num" data-u="h">--</span><span class="cuenta__lbl">horas</span></div>
+            <div class="cuenta__item"><span class="cuenta__num" data-u="m">--</span><span class="cuenta__lbl">min</span></div>
+            <div class="cuenta__item"><span class="cuenta__num" data-u="s">--</span><span class="cuenta__lbl">seg</span></div>
+          </div>
+          <p class="cuenta__aviso" data-cuenta-aviso hidden></p>
+        </div></div>
+        <div class="hero__acciones" data-entrada style="--retardo:400ms">
+          <a class="ccf-boton ccf-boton--claro ccf-boton--grande" href="#reserva">Reserva tu cupo <span class="ccf-boton__flecha" aria-hidden="true"></span></a>
+          <a class="ccf-boton ccf-boton--contorno-claro ccf-boton--grande" href="https://wa.me/573160106741?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20Open%20Day%20de%20la%20Sede%20Norte%20del%20s%C3%A1bado%2021%20de%20noviembre." target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+        </div>
+        <span class="ccf-eslogan" data-entrada style="--retardo:480ms">Nuestra Huella</span>
+      </div>
+      <div class="hero__media">
+        <div class="hero__bloque" aria-hidden="true"></div>
+        <div class="hero__barras" aria-hidden="true"><span style="--retardo:250ms"></span><span style="--retardo:330ms"></span><span style="--retardo:410ms"></span><span style="--retardo:490ms"></span></div>
+        <div class="hero__foto">
+          <picture>
+            <source media="(max-width: 767px)" srcset="assets/photos/norte/hero-m.jpg">
+            <img src="assets/photos/norte/hero.jpg" alt="Niños y niñas de primaria con uniforme rojo y azul sonríen abrazados en una zona verde, con un parque infantil al fondo." width="1920" height="1080" fetchpriority="high">
+          </picture>
+        </div>
+        <div class="hero__sello" data-entrada style="--retardo:560ms"><strong>Campestre</strong><span>Km 6 vía Suba-Cota</span></div>
+      </div>
+    </div>
+    <span class="hero__vertical" aria-hidden="true">#NuestraHuella</span>
+  </section>
+
+  <section class="credenciales" aria-label="Respaldo del colegio">
+    <ul>
+      <li data-reveal style="--retardo:0ms">33 años de trayectoria</li>
+      <li data-reveal style="--retardo:60ms">ICFES A+</li>
+      <li data-reveal style="--retardo:120ms">Placa Dorada Cambridge</li>
+      <li data-reveal style="--retardo:180ms">Certificaciones de francés DELF</li>
+      <li data-reveal style="--retardo:240ms">Certificación antibullying</li>
+    </ul>
+  </section>
+
+  <section class="seccion seccion--suave" id="reserva" aria-labelledby="titulo-reserva">
+    <div class="contenedor registro">
+      <div class="registro__info" data-reveal="izq">
+        <h6>Paso 1 · Inscripción</h6>
+        <h2 id="titulo-reserva">Reserva tu cupo en el Open Day</h2>
+        <p class="ccf-intro">Déjanos tus datos y nuestro equipo de admisiones te contactará para acompañarte en tu visita.</p>
+        
+        <ul class="registro__lista">
+          <li><span class="registro__lbl">Fecha</span><span class="registro__val"><strong>Sábado 21 de noviembre de 2026</strong></span></li>
+          <li><span class="registro__lbl">Hora</span><span class="registro__val"><strong>8:00 a.m.</strong></span></li>
+          <li><span class="registro__lbl">Lugar</span><span class="registro__val"><strong>Sede Norte</strong>Km 6 vía Suba-Cota, vereda Chorrillos</span></li>
+          <li><span class="registro__lbl">Para</span><span class="registro__val">Familias interesadas en cupos 2027, de prejardín a 9.°</span></li>
+        </ul>
+        <div class="registro__acciones">
+          <a class="ccf-boton ccf-boton--secundario" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Open%20Day%20Sede%20Norte%20%C2%B7%20Colegio%20C%C3%A9lestin%20Freinet&amp;dates=20261121T130000Z/20261121T150000Z&amp;details=Open%20Day%20de%20la%20Sede%20Norte.%20WhatsApp%20%2B57%20316%20010%206741.&amp;location=Km%206%20v%C3%ADa%20Suba-Cota%2C%20vereda%20Chorrillos&amp;ctz=America/Bogota" data-ics target="_blank" rel="noopener">Agregar a mi calendario</a>
+          <a class="ccf-boton ccf-boton--whatsapp" href="https://wa.me/573160106741?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20Open%20Day%20de%20la%20Sede%20Norte%20del%20s%C3%A1bado%2021%20de%20noviembre." target="_blank" rel="noopener">WhatsApp de la sede</a>
+        </div>
+      </div>
+      <div class="tarjeta-form" data-reveal="der">
+        <div class="tarjeta-form__banda" aria-hidden="true"></div>
+        <div class="tarjeta-form__cuerpo">
+          <div class="tarjeta-form__cabeza"><h6>Inscripción · Sede Norte</h6><p>Sábado 21 de noviembre · 8:00 a.m.</p></div>
+          <div class="ccf-ranura-formulario">
+            <div class="ccf-ranura-formulario__carga" role="status">
+              <span>Cargando el formulario de inscripción.</span>
+              <span>Si no aparece, escríbenos al WhatsApp <a href="https://wa.me/573160106741?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20Open%20Day%20de%20la%20Sede%20Norte%20del%20s%C3%A1bado%2021%20de%20noviembre." target="_blank" rel="noopener">+57 316 010 6741</a> o llama al PBX <a href="tel:+576017437661">601 743 7661</a>.</span>
+            </div>
+            <script src="https://js.hsforms.net/forms/embed/52072947.js" defer></script>
+            <div class="hs-form-frame" data-region="na1" data-form-id="82d4ee90-ed3f-4f60-ae3c-2fe65aabd61a" data-portal-id="52072947"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="open-day" aria-labelledby="titulo-experiencia">
+    <div class="contenedor">
+      <div class="seccion__cabeza" data-reveal>
+        <h6>Sábado 21 de noviembre · 8:00 a.m.</h6>
+        <h2 id="titulo-experiencia">Qué vivirás en el Open Day</h2>
+        <p>Una mañana para conocernos en persona, con tu familia.</p>
+      </div>
+      <div class="experiencia">
+        <div class="experiencia__foto"><img src="assets/photos/norte/experiencia.jpg" alt="Estudiantes y adultos caminan por una amplia zona verde con juegos infantiles de colores y árboles al fondo." width="1600" height="1000" loading="lazy" decoding="async"></div>
+        <ol class="lista-numerada">
+          <li data-reveal style="--retardo:0ms"><div><h3>Conoce nuestra promesa</h3><p>Te presentamos los tres pilares que nos guían: entorno protector, tecnología e innovación y construcción de futuro.</p></div></li>
+          <li data-reveal style="--retardo:90ms"><div><h3>Recorre la sede</h3><p>Conoce con tu familia el campus campestre, sus zonas verdes, la huerta y los espacios donde aprenden nuestros estudiantes.</p></div></li>
+          <li data-reveal style="--retardo:180ms"><div><h3>Resuelve tus dudas</h3><p>Nuestro equipo de admisiones te explica costos 2027, transporte, alimentación, uniformes y el paso a paso de la matrícula.</p></div></li>
+          <li data-reveal style="--retardo:270ms"><div><h3>Ven con tu hijo o hija</h3><p>El Open Day es para toda la familia: vivan juntos la experiencia de conocer el colegio.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion seccion--suave" id="sede" aria-labelledby="titulo-sede">
+    <div class="contenedor">
+      <div class="seccion__cabeza" data-reveal>
+        <h6>Campestre · Km 6 vía Suba-Cota</h6>
+        <h2 id="titulo-sede">Por qué la Sede Norte</h2>
+        <p>Lo que hace única a la Sede Norte, en cuatro razones.</p>
+      </div>
+      <div class="razones">
+        <article class="razon" data-reveal style="--retardo:0ms"><span class="razon__marca" aria-hidden="true"></span><span class="razon__num">01</span><h3>Campus campestre</h3><p>Aire puro y zonas verdes en la vía Suba-Cota, con una huerta que trabajamos junto al Jardín Botánico.</p></article>
+        <article class="razon" data-reveal style="--retardo:90ms"><span class="razon__marca" aria-hidden="true"></span><span class="razon__num">02</span><h3>Inglés y francés</h3><p>Inglés 8 h semanales con Cambridge y francés con Alianza Francesa.</p></article>
+        <article class="razon" data-reveal style="--retardo:180ms"><span class="razon__marca" aria-hidden="true"></span><span class="razon__num">03</span><h3>Sin tareas en casa</h3><p>Nuestro enfoque &quot;no tareas en casa&quot;: el trabajo académico fuerte sucede dentro del colegio.</p></article>
+        <article class="razon" data-reveal style="--retardo:270ms"><span class="razon__marca" aria-hidden="true"></span><span class="razon__num">04</span><h3>Técnico SENA o énfasis en inglés</h3><p>Al graduarse: técnico SENA en Software, Cocina o Multimedia, o énfasis en inglés.</p></article>
+      </div>
+      <div class="cifras fondo-rojo">
+        <div class="cifra" data-cifra data-valor="33"><span class="ccf-cifra"><span class="cifra__num">33</span></span><p>años de trayectoria</p></div>
+        <div class="cifra" data-cifra data-valor="8"><span class="ccf-cifra"><span class="cifra__num">8</span><span class="cifra__suf"> h</span></span><p>de inglés a la semana</p></div>
+        <div class="cifra" data-cifra data-valor="2"><span class="ccf-cifra"><span class="cifra__num">2</span></span><p>idiomas: inglés y francés</p></div>
+        <div class="cifra" data-cifra data-valor="8"><span class="ccf-cifra"><span class="cifra__num">8</span></span><p>actividades lúdicas sin costo extra</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" aria-labelledby="titulo-pilares">
+    <div class="contenedor">
+      <div class="seccion__cabeza" data-reveal>
+        <h6>Una marca, cuatro sedes</h6>
+        <h2 id="titulo-pilares">Tres pilares que nos definen</h2>
+        <p>Elegir el Célestin Freinet es darles a tus hijos la tranquilidad de crecer protegidos hoy, y la certeza de abrirse paso hacia un futuro brillante.</p>
+      </div>
+      <div class="pilares">
+        <article class="pilar pilar--rojo" data-reveal style="--retardo:0ms"><span class="pilar__num">01 · Cuidar el presente</span><h3>Entorno protector</h3><p class="pilar__texto">El escudo emocional y físico para nuestros estudiantes, garantizando un entorno educativo seguro y de calidad.</p><ul><li>Certificación antibullying con enfoque restaurativo</li><li>Cero celulares en rutas, clases y descansos</li><li>Cámaras monitoreadas, enfermería y convenio de ambulancia</li><li>Proyecto socioemocional con Editorial Norma y psicología</li></ul></article>
+        <article class="pilar pilar--azul-oscuro" data-reveal style="--retardo:110ms"><span class="pilar__num">02 · Aprender haciendo</span><h3>Tecnología e innovación</h3><p class="pilar__texto">La ciencia y la tecnología no se memorizan: se viven y se construyen de forma práctica, ética y conectada con el entorno.</p><ul><li>Robótica y STEAM con kits individuales</li><li>Google Reference School y laboratorios CloudLabs</li><li>Programación con CODE e inteligencia artificial</li></ul></article>
+        <article class="pilar pilar--azul-claro" data-reveal style="--retardo:220ms"><span class="pilar__num">03 · Mentalidad global</span><h3>Construcción de futuro</h3><p class="pilar__texto">Preparamos ciudadanos con solidez intelectual y habilidades técnicas, abriéndoles las puertas al mundo.</p><ul><li>Intercambio en Canadá</li><li>Convenios con universidades</li><li>Técnico SENA o énfasis en inglés</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion seccion--suave" aria-labelledby="titulo-galeria" data-galeria>
+    <div class="contenedor">
+      <div class="galeria__cabeza">
+        <div class="seccion__cabeza" data-reveal>
+          <h6>Vía Suba-Cota</h6>
+          <h2 id="titulo-galeria">Así se vive la Sede Norte</h2>
+        </div>
+        <div class="galeria__controles">
+          <button class="galeria__btn galeria__btn--prev" type="button" aria-label="Fotos anteriores"><span></span></button>
+          <button class="galeria__btn galeria__btn--next" type="button" aria-label="Fotos siguientes"><span></span></button>
+        </div>
+      </div>
+      <div class="galeria__pista" tabindex="0" aria-label="Galería de fotos de la Sede Norte">
+        <figure class="galeria__item" data-reveal style="--retardo:0ms"><div class="galeria__marco"><img src="assets/photos/norte/g1.jpg" alt="Estudiantes con uniforme de diario sonríen sentados en sus pupitres dentro de un salón decorado." width="1200" height="900" loading="lazy" decoding="async"></div><figcaption>En el salón</figcaption></figure>
+        <figure class="galeria__item" data-reveal style="--retardo:80ms"><div class="galeria__marco"><img src="assets/photos/norte/g2.jpg" alt="Estudiantes con bata blanca sonríen alrededor de una mesa de laboratorio con frascos de líquidos de colores." width="1200" height="900" loading="lazy" decoding="async"></div><figcaption>Laboratorio</figcaption></figure>
+        <figure class="galeria__item" data-reveal style="--retardo:160ms"><div class="galeria__marco"><img src="assets/photos/norte/g3.jpg" alt="Niños con uniforme deportivo juegan con un balón de baloncesto en una zona cubierta." width="1200" height="900" loading="lazy" decoding="async"></div><figcaption>Deporte</figcaption></figure>
+        <figure class="galeria__item" data-reveal style="--retardo:240ms"><div class="galeria__marco"><img src="assets/photos/norte/g4.jpg" alt="Estudiantes de bachillerato leen sentados en el césped, frente a un muro de plantas." width="1200" height="900" loading="lazy" decoding="async"></div><figcaption>Lectura al aire libre</figcaption></figure>
+        <figure class="galeria__item" data-reveal style="--retardo:240ms"><div class="galeria__marco"><img src="assets/photos/norte/g5.jpg" alt="Dos niñas de preescolar dibujan en una mesa rosada dentro de un salón de colores." width="1200" height="900" loading="lazy" decoding="async"></div><figcaption>Preescolar</figcaption></figure>
+        <figure class="galeria__item" data-reveal style="--retardo:240ms"><div class="galeria__marco"><img src="assets/photos/norte/g6.jpg" alt="Huerta con plantas recién sembradas bajo una estructura techada; al fondo, personas recorren el campus." width="1200" height="900" loading="lazy" decoding="async"></div><figcaption>Huerta</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="admision" aria-labelledby="titulo-admision">
+    <div class="contenedor" data-reveal-grupo>
+      <div class="seccion__cabeza" data-reveal>
+        <h6>Admisión 2027</h6>
+        <h2 id="titulo-admision">Tu camino a la matrícula</h2>
+        <p>Seis pasos, y el Open Day es el segundo. Inscribirte hoy es el primero.</p>
+      </div>
+      <ol class="ccf-pasos">
+        <li data-reveal style="--retardo:0ms"><h3>Inscripción</h3><p>Diligencia el formulario de tu sede.</p></li>
+        <li class="paso--actual" data-reveal style="--retardo:80ms"><h3>Open Day</h3><p>Asiste con tu hijo o hija a la jornada de puertas abiertas.</p><span class="ccf-etiqueta ccf-etiqueta--relleno paso__marca">21 de noviembre</span></li>
+        <li data-reveal style="--retardo:160ms"><h3>Formulario</h3><p>Paga el formulario de admisión.</p></li>
+        <li data-reveal style="--retardo:240ms"><h3>Documentos</h3><p>Radica los documentos solicitados.</p></li>
+        <li data-reveal style="--retardo:320ms"><h3>Verificación</h3><p>Revisamos la información entregada.</p></li>
+        <li data-reveal style="--retardo:400ms"><h3>Matrícula</h3><p>Ordinaria en diciembre, extraordinaria en enero.</p></li>
+      </ol>
+      <p style="margin-top:var(--espacio-7)" data-reveal><a class="ccf-boton ccf-boton--grande" href="#reserva">Inscríbete al Open Day <span class="ccf-boton__flecha" aria-hidden="true"></span></a></p>
+    </div>
+  </section>
+
+  <section class="seccion seccion--suave" aria-labelledby="titulo-eligen">
+    <div class="contenedor eligen">
+      <div data-reveal="izq">
+        <h6>Lo que más valoran</h6>
+        <h2 id="titulo-eligen">Por qué las familias nos eligen</h2>
+        <p class="ccf-intro">Lo que más escuchamos de las familias de la Sede Norte.</p>
+        <ul class="chips"><li>Campestre</li><li>Tranquilo</li><li>Idiomas</li><li>Técnica SENA</li><li>Familias que nos recomiendan</li></ul>
+      </div>
+      <div data-reveal="der">
+        <h6>Respaldo</h6>
+        <h3>Logros y certificaciones</h3>
+        <ul class="logros"><li>ICFES A+</li><li>Placa Dorada Cambridge</li><li>Certificaciones de francés DELF</li><li>Certificación antibullying</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="preguntas" aria-labelledby="titulo-preguntas">
+    <div class="contenedor faq">
+      <div data-reveal="izq">
+        <h6>Preguntas frecuentes</h6>
+        <h2 id="titulo-preguntas">Todo lo que necesitas saber</h2>
+        <p class="ccf-intro">¿Tienes otra pregunta? Escríbenos y te respondemos.</p>
+        <a class="ccf-boton ccf-boton--whatsapp" href="https://wa.me/573160106741?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20Open%20Day%20de%20la%20Sede%20Norte%20del%20s%C3%A1bado%2021%20de%20noviembre." target="_blank" rel="noopener">Pregunta por WhatsApp</a>
+      </div>
+      <div class="faq__lista" data-reveal="der">
+        <details open><summary>¿Quiénes pueden asistir?</summary><div class="faq__resp"><p>Familias interesadas en un cupo 2027, de prejardín a 9.°. Te invitamos a venir con tu hijo o hija.</p></div></details>
+        <details><summary>¿Tengo que inscribirme?</summary><div class="faq__resp"><p>Sí. Inscríbete con el formulario de esta página para que nuestro equipo de admisiones te contacte y te espere el día del Open Day.</p></div></details>
+        <details><summary>¿Cuánto cuesta estudiar en la sede?</summary><div class="faq__resp"><p>En el Open Day te compartimos la información de costos 2027, servicios y formas de pago, y resolvemos tus preguntas.</p></div></details>
+        <details><summary>¿Qué pasa después del Open Day?</summary><div class="faq__resp"><p>Sigues el proceso de admisión: pago del formulario, radicación y verificación de documentos y matrícula. La matrícula ordinaria es en diciembre y la extraordinaria en enero.</p></div></details>
+        <details><summary>¿Cómo pago el formulario de admisión?</summary><div class="faq__resp"><p>En línea por la pasarela Phidias, o en la tesorería o las recepciones de la sede con tarjeta débito, crédito o transferencia.</p></div></details>
+        <details><summary>¿Tienen transporte y alimentación?</summary><div class="faq__resp"><p>Sí. Alimentación opcional (comida completa o servicio para calentar) y transporte escolar.</p></div></details>
+        <details><summary>¿Y si no puedo asistir ese día?</summary><div class="faq__resp"><p>Tenemos otro Open Day el sábado 5 de diciembre, 8:00 a.m. También puedes escribirnos por WhatsApp al +57 316 010 6741.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion seccion--suave" id="ubicacion" aria-labelledby="titulo-ubicacion">
+    <div class="contenedor ubicacion">
+      <div class="direccion" data-reveal="izq">
+        <h6 style="color:var(--escudo-manos)">Cómo llegar</h6>
+        <h2 id="titulo-ubicacion" style="color:var(--blanco)">Sede Norte</h2>
+        <p class="ccf-intro">Km 6 vía Suba-Cota, vereda Chorrillos</p>
+        <div class="direccion__acciones">
+          <a class="ccf-boton ccf-boton--claro" href="https://www.google.com/maps/search/?api=1&amp;query=Colegio%20C%C3%A9lestin%20Freinet%20Sede%20Norte%20Km%206%20v%C3%ADa%20Suba%20Cota" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          <a class="ccf-boton ccf-boton--contorno-claro" href="https://wa.me/573160106741?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20Open%20Day%20de%20la%20Sede%20Norte%20del%20s%C3%A1bado%2021%20de%20noviembre." target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+        <p class="direccion__contacto">WhatsApp <a href="https://wa.me/573160106741?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20Open%20Day%20de%20la%20Sede%20Norte%20del%20s%C3%A1bado%2021%20de%20noviembre." target="_blank" rel="noopener">+57 316 010 6741</a> · PBX <a href="tel:+576017437661">601 743 7661</a></p>
+      </div>
+      <div data-reveal="der">
+        <h6>Datos de la sede</h6>
+        <h3>Lo esencial</h3>
+        <dl class="datos">
+          <div><dt>Calendario</dt><dd>A</dd></div>
+          <div><dt>Niveles</dt><dd>Preescolar a 11.°. Cupos nuevos de prejardín a 9.°</dd></div>
+          <div><dt>Jornada</dt><dd>7:30 a.m. a 3:00 p.m.</dd></div>
+          <div><dt>Actividades</dt><dd>Porras, fútbol, futsal, patinaje, taekwondo, baloncesto, banda marcial y voleibol, sin cobros extra</dd></div>
+          <div><dt>Refuerzo</dt><dd>Clínicas los sábados</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="cierre fondo-rojo sobre-color" aria-labelledby="titulo-cierre">
+    <div class="cierre__barras" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="contenedor">
+      <div data-reveal>
+        <h6>Open Day · Sede Norte</h6>
+        <h2 id="titulo-cierre">Te esperamos el sábado 21 de noviembre</h2>
+        <p>8:00 a.m. · Km 6 vía Suba-Cota, vereda Chorrillos</p>
+        <a class="ccf-boton ccf-boton--claro ccf-boton--grande" href="#reserva">Reserva tu cupo <span class="ccf-boton__flecha" aria-hidden="true"></span></a>
+      </div>
+      <div class="cierre__panel" data-reveal="escala">
+        
+        <div class="hero__cuenta">
+          <p class="visualmente-oculto">El Open Day es el sábado 21 de noviembre a las 8:00 a.m.</p>
+          <div class="cuenta " data-cuenta data-objetivo="2026-11-21T08:00:00-05:00" data-siguiente="2026-12-05T08:00:00-05:00" aria-hidden="true">
+            <div class="cuenta__item"><span class="cuenta__num" data-u="d">--</span><span class="cuenta__lbl">días</span></div>
+            <div class="cuenta__item"><span class="cuenta__num" data-u="h">--</span><span class="cuenta__lbl">horas</span></div>
+            <div class="cuenta__item"><span class="cuenta__num" data-u="m">--</span><span class="cuenta__lbl">min</span></div>
+            <div class="cuenta__item"><span class="cuenta__num" data-u="s">--</span><span class="cuenta__lbl">seg</span></div>
+          </div>
+          <p class="cuenta__aviso" data-cuenta-aviso hidden></p>
+        </div>
+        <span class="ccf-eslogan">#NuestraHuella</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ccf-pie">
+  <div class="contenedor ccf-pie__columnas">
+    <div>
+      <div class="ccf-pie__logo"><img src="assets/logos/logo-blanco.png" alt="Colegio Célestin Freinet" width="639" height="168" loading="lazy"></div>
+      <h3>Una marca, cuatro sedes</h3>
+      <div class="ccf-pie__sedes">
+        <a class="ccf-sede ccf-sede--azul-oscuro" href="https://celestinfreinet.edu.co/" target="_blank" rel="noopener">Sede Administrativa</a>
+        <a class="ccf-sede ccf-sede--rojo" href="https://celestinfreinet.edu.co/" target="_blank" rel="noopener" aria-current="true">Sede Norte</a>
+        <a class="ccf-sede ccf-sede--azul-claro" href="https://celestinfreinetbilingue.edu.co/" target="_blank" rel="noopener">Sede Bilingüe</a>
+        <a class="ccf-sede ccf-sede--rojo" href="https://celestinfreinetsoacha.edu.co/" target="_blank" rel="noopener">Ciudad Verde</a>
+      </div>
+    </div>
+    <div>
+      <h3>Sede Norte</h3>
+      <ul>
+        <li>Km 6 vía Suba-Cota, vereda Chorrillos</li>
+        <li><a href="https://wa.me/573160106741?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20Open%20Day%20de%20la%20Sede%20Norte%20del%20s%C3%A1bado%2021%20de%20noviembre." target="_blank" rel="noopener">WhatsApp +57 316 010 6741</a></li>
+        <li><a href="tel:+576017437661">PBX 601 743 7661</a></li>
+        
+      </ul>
+    </div>
+    <div>
+      <h3>Open Day</h3>
+      <ul>
+        <li>Sábado 21 de noviembre, 8:00 a.m.</li>
+        <li>Próximo: sábado 5 de diciembre</li>
+        <li><a href="#reserva">Reserva tu cupo</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Síguenos</h3>
+      <ul>
+        <li><a href="https://celestinfreinet.edu.co/" target="_blank" rel="noopener">celestinfreinet.edu.co</a></li>
+        <li><a href="https://www.youtube.com/@colegiocelestinfreinet6366" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.tiktok.com/@oficialccf1" target="_blank" rel="noopener">TikTok</a></li>
+      </ul>
+      <div class="ccf-pie__redes">
+        <a href="https://www.instagram.com/oficialccf/" target="_blank" rel="noopener" aria-label="Instagram @oficialccf"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3"/></svg></a>
+        <a href="https://web.facebook.com/OficialCCF/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8.1h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.5 1.6-1.5h1.7V4.3c-.3 0-1.3-.1-2.5-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.5v3.2h2.7V22h3.3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="ccf-pie__legal">
+    <div class="contenedor">
+      <span>Colegio de Educación Técnica y Académica Célestin Freinet · 2026</span>
+      <span class="ccf-eslogan">#NuestraHuella</span>
+    </div>
+  </div>
+  <div class="ccf-banda-icfes ccf-banda-icfes--web"><div class="contenedor"><img src="assets/logos/sello-icfes.png" alt="ICFES Nivel Muy Superior" width="233" height="120" loading="lazy"><span><strong>Somos ICFES Muy Superior</strong>, máxima calificación otorgada a los mejores colegios del país.</span></div></div>
+</footer>
+
+<div class="barra-movil" aria-label="Acciones rápidas">
+  <a class="ccf-boton" href="#reserva">Reserva tu cupo</a>
+  <a class="ccf-boton ccf-boton--whatsapp" href="https://wa.me/573160106741?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20Open%20Day%20de%20la%20Sede%20Norte%20del%20s%C3%A1bado%2021%20de%20noviembre." target="_blank" rel="noopener" aria-label="WhatsApp de la sede">WhatsApp</a>
+</div>
+
+<script>window.OPEN_DAY = {"ics":"BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Colegio Celestin Freinet//Open Day//ES\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\nBEGIN:VEVENT\r\nUID:open-day-norte-20261121T130000Z-0@celestinfreinet.edu.co\r\nDTSTAMP:20261021T050000Z\r\nDTSTART:20261121T130000Z\r\nDTEND:20261121T150000Z\r\nSUMMARY:Open Day Sede Norte · Colegio Célestin Freinet\r\nLOCATION:Km 6 vía Suba-Cota\\, vereda Chorrillos\r\nDESCRIPTION:Te esperamos en el Open Day de la Sede Norte. WhatsApp +57 316 010 6741.\r\nEND:VEVENT\r\nEND:VCALENDAR","icsNombre":"open-day-norte.ics","textoHoy":"Hoy es el Open Day de la Sede Norte. Te esperamos.","textoSiguiente":"Este Open Day ya pasó. Próximo: sábado 5 de diciembre, 8:00 a.m.","textoFin":"Escríbenos por WhatsApp para agendar tu visita."};</script>
+<script>
+/* Open Day · Colegio Célestin Freinet. Interacciones sin dependencias.
+   Movimiento solo con transform y opacity; todo se desactiva con prefers-reduced-motion. */
+(function () {
+  'use strict';
+  var doc = document.documentElement;
+  var reducir = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cfg = window.OPEN_DAY || {};
+
+  /* ---- Entrada del hero ---- */
+  var hero = document.querySelector('.hero');
+  if (hero) {
+    requestAnimationFrame(function () { requestAnimationFrame(function () { hero.classList.add('listo'); }); });
+  }
+
+  /* ---- Revelado al hacer scroll ---- */
+  var revelables = document.querySelectorAll('[data-reveal], [data-reveal-grupo], .experiencia__foto, [data-cifra]');
+  function mostrar(el) {
+    el.classList.add('visible');
+    if (el.hasAttribute('data-cifra')) contar(el);
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) {
+        if (e.isIntersecting) { mostrar(e.target); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    revelables.forEach(function (el) { io.observe(el); });
+  } else {
+    revelables.forEach(mostrar);
+  }
+  // Seguridad: si algo falla, nada queda oculto.
+  setTimeout(function () { revelables.forEach(function (el) { if (!el.classList.contains('visible')) el.classList.add('visible'); }); }, 6000);
+
+  /* ---- Contadores de cifras ---- */
+  var formato = function (n) { return Math.round(n).toLocaleString('es-CO'); };
+  function contar(el) {
+    if (el.dataset.contado) return;
+    el.dataset.contado = '1';
+    var fin = parseFloat(el.dataset.valor);
+    var num = el.querySelector('.cifra__num');
+    if (!num) return;
+    if (reducir || !isFinite(fin)) { num.textContent = formato(fin); return; }
+    var inicio = null, dur = 900;
+    function paso(t) {
+      if (!inicio) inicio = t;
+      var p = Math.min(1, (t - inicio) / dur);
+      var e = 1 - Math.pow(1 - p, 3);
+      num.textContent = formato(fin * e);
+      if (p < 1) requestAnimationFrame(paso);
+    }
+    requestAnimationFrame(paso);
+  }
+
+  /* ---- Cuenta regresiva ---- */
+  var cuentas = document.querySelectorAll('[data-cuenta]');
+  function dos(n) { return n < 10 ? '0' + n : String(n); }
+  function pintar(cuenta, ms) {
+    var s = Math.max(0, Math.floor(ms / 1000));
+    var v = { d: Math.floor(s / 86400), h: Math.floor((s % 86400) / 3600), m: Math.floor((s % 3600) / 60), s: s % 60 };
+    ['d', 'h', 'm', 's'].forEach(function (k) {
+      var el = cuenta.querySelector('[data-u="' + k + '"]');
+      if (!el) return;
+      var txt = k === 'd' ? String(v[k]) : dos(v[k]);
+      if (el.textContent !== txt) {
+        el.textContent = txt;
+        if (!reducir) { el.classList.remove('cambia'); void el.offsetWidth; el.classList.add('cambia'); }
+      }
+    });
+  }
+  function tick() {
+    var ahora = Date.now();
+    cuentas.forEach(function (c) {
+      var objetivo = Date.parse(c.dataset.objetivo);
+      var siguiente = c.dataset.siguiente ? Date.parse(c.dataset.siguiente) : NaN;
+      var aviso = c.parentNode.querySelector('[data-cuenta-aviso]');
+      var reloj = c.querySelector('.cuenta__reloj') || c;
+      if (ahora < objetivo) {
+        reloj.hidden = false;
+        if (aviso) aviso.hidden = true;
+        pintar(c, objetivo - ahora);
+      } else if (ahora < objetivo + 4 * 3600 * 1000) {
+        reloj.hidden = true;
+        if (aviso) { aviso.hidden = false; aviso.textContent = cfg.textoHoy || 'Hoy es el Open Day. Te esperamos.'; }
+      } else if (isFinite(siguiente) && ahora < siguiente) {
+        reloj.hidden = false;
+        pintar(c, siguiente - ahora);
+        if (aviso && cfg.textoSiguiente) { aviso.hidden = false; aviso.textContent = cfg.textoSiguiente; }
+      } else {
+        reloj.hidden = true;
+        if (aviso) { aviso.hidden = false; aviso.textContent = cfg.textoFin || 'Escríbenos por WhatsApp para agendar tu visita.'; }
+      }
+    });
+  }
+  if (cuentas.length) { tick(); setInterval(tick, 1000); }
+
+  /* ---- Galería sin autoplay ---- */
+  document.querySelectorAll('[data-galeria]').forEach(function (g) {
+    var pista = g.querySelector('.galeria__pista');
+    var prev = g.querySelector('.galeria__btn--prev');
+    var next = g.querySelector('.galeria__btn--next');
+    if (!pista || !prev || !next) return;
+    function paso() {
+      var item = pista.querySelector('.galeria__item');
+      var gap = parseFloat(getComputedStyle(pista).columnGap) || 0;
+      return item ? item.getBoundingClientRect().width + gap : pista.clientWidth;
+    }
+    function estado() {
+      prev.disabled = pista.scrollLeft <= 2;
+      next.disabled = pista.scrollLeft + pista.clientWidth >= pista.scrollWidth - 2;
+    }
+    prev.addEventListener('click', function () { pista.scrollBy({ left: -paso(), behavior: reducir ? 'auto' : 'smooth' }); });
+    next.addEventListener('click', function () { pista.scrollBy({ left: paso(), behavior: reducir ? 'auto' : 'smooth' }); });
+    pista.addEventListener('scroll', estado, { passive: true });
+    window.addEventListener('resize', estado);
+    estado();
+  });
+
+  /* ---- Formulario de HubSpot: muestra los datos de contacto mientras carga ---- */
+  document.querySelectorAll('.ccf-ranura-formulario').forEach(function (ranura) {
+    var marco = ranura.querySelector('.hs-form-frame');
+    if (!marco) return;
+    function listo() { ranura.classList.add('cargado'); }
+    function revisar() {
+      var iframe = marco.querySelector('iframe');
+      if (iframe) {
+        if (iframe.offsetHeight > 80) listo();
+        else iframe.addEventListener('load', function () { setTimeout(listo, 150); }, { once: true });
+        return true;
+      }
+      return false;
+    }
+    if (!revisar() && 'MutationObserver' in window) {
+      var mo = new MutationObserver(function () { if (revisar()) mo.disconnect(); });
+      mo.observe(marco, { childList: true, subtree: true });
+    }
+  });
+
+  /* ---- Barra fija en móvil ---- */
+  var barra = document.querySelector('.barra-movil');
+  var reserva = document.getElementById('reserva');
+  if (barra && hero && 'IntersectionObserver' in window) {
+    var heroVisible = true, reservaVisible = false;
+    function actualizar() { barra.classList.toggle('visible', !heroVisible && !reservaVisible); }
+    new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; actualizar(); }).observe(hero);
+    if (reserva) new IntersectionObserver(function (e) { reservaVisible = e[0].isIntersecting; actualizar(); }, { threshold: 0.15 }).observe(reserva);
+  }
+
+  /* ---- Navegación: marca la sección visible ---- */
+  var enlaces = document.querySelectorAll('.cabecera__nav a[href^="#"]');
+  if (enlaces.length && 'IntersectionObserver' in window) {
+    var mapa = {};
+    enlaces.forEach(function (a) { var s = document.querySelector(a.getAttribute('href')); if (s) mapa[s.id] = a; });
+    var obs = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        enlaces.forEach(function (a) { a.removeAttribute('aria-current'); });
+        if (mapa[e.target.id]) mapa[e.target.id].setAttribute('aria-current', 'true');
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(mapa).forEach(function (id) { obs.observe(document.getElementById(id)); });
+    // Las secciones sin enlace propio (hero, reserva, pilares, cierre) limpian la marca.
+    document.querySelectorAll('main > section:not([id]), #reserva').forEach(function (s) { obs.observe(s); });
+  }
+
+  /* ---- Agregar al calendario (.ics) ---- */
+  document.querySelectorAll('[data-ics]').forEach(function (btn) {
+    btn.addEventListener('click', function (ev) {
+      if (!cfg.ics) return;
+      ev.preventDefault();
+      var blob = new Blob([cfg.ics], { type: 'text/calendar;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url; a.download = cfg.icsNombre || 'open-day.ics';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+    });
+  });
+})();
+
+</script>
+</body>
+</html>

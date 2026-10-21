@@ -1,0 +1,11 @@
+[
+ {"role": "hero", "file": "hero.jpg", "alt": "Niños y niñas de primaria con uniforme rojo y azul sonríen abrazados en una zona verde, con un parque infantil al fondo.", "caption": "Recreo en la zona verde"},
+ {"role": "hero-mobile", "file": "hero-m.jpg", "alt": "Estudiantes con camisa blanca y sudadera azul posan sonrientes en el césped frente a un parque infantil de colores.", "caption": "Juego al aire libre"},
+ {"role": "experiencia", "file": "experiencia.jpg", "alt": "Estudiantes y adultos caminan por una amplia zona verde con juegos infantiles de colores y árboles al fondo.", "caption": "Campus campestre"},
+ {"role": "g1", "file": "g1.jpg", "alt": "Estudiantes con uniforme de diario sonríen sentados en sus pupitres dentro de un salón decorado.", "caption": "En el salón"},
+ {"role": "g2", "file": "g2.jpg", "alt": "Estudiantes con bata blanca sonríen alrededor de una mesa de laboratorio con frascos de líquidos de colores.", "caption": "Laboratorio"},
+ {"role": "g3", "file": "g3.jpg", "alt": "Niños con uniforme deportivo juegan con un balón de baloncesto en una zona cubierta.", "caption": "Deporte"},
+ {"role": "g4", "file": "g4.jpg", "alt": "Estudiantes de bachillerato leen sentados en el césped, frente a un muro de plantas.", "caption": "Lectura al aire libre"},
+ {"role": "g5", "file": "g5.jpg", "alt": "Dos niñas de preescolar dibujan en una mesa rosada dentro de un salón de colores.", "caption": "Preescolar"},
+ {"role": "g6", "file": "g6.jpg", "alt": "Huerta con plantas recién sembradas bajo una estructura techada; al fondo, personas recorren el campus.", "caption": "Huerta"}
+]

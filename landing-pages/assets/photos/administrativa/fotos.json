@@ -1,0 +1,74 @@
+[
+ {
+  "role": "hero",
+  "file": "hero.jpg",
+  "alt": "Estudiantes de bachillerato con uniforme azul y rojo en una cancha pintada de colores; en primer plano una estudiante ríe a carcajadas y al fondo se ven un parque infantil, mallas y edificios de ladrillo del barrio.",
+  "caption": "Descanso en la cancha",
+  "sourceTitle": "CELESTINSUBA_-52.jpg",
+  "sourceDriveId": "1ULQLcItaWZbWFxZgmD01gz0b8Shj-i48"
+ },
+ {
+  "role": "hero-mobile",
+  "file": "hero-m.jpg",
+  "alt": "Una estudiante con la chaqueta del uniforme ríe en una cancha de colores; a su lado camina un compañero con una chaqueta que dice Celestin Freinet y al fondo hay un parque infantil y edificios de ladrillo.",
+  "caption": "Alegría en el descanso",
+  "sourceTitle": "CELESTINSUBA_-52.jpg",
+  "sourceDriveId": "1ULQLcItaWZbWFxZgmD01gz0b8Shj-i48"
+ },
+ {
+  "role": "experiencia",
+  "file": "experiencia.jpg",
+  "alt": "Niños y niñas con uniforme blanco recorren un pasillo decorado con guirnaldas de hojas y banderines; los acompañan varios adultos y una mujer con camiseta roja lleva de la mano a un niño.",
+  "caption": "Recorrido por el pasillo",
+  "sourceTitle": "CELESTINSUBA_-159.jpg",
+  "sourceDriveId": "1-kXU_Y2iGE8KOxaYef7mr2l8DQgHn48U"
+ },
+ {
+  "role": "g1",
+  "file": "g1.jpg",
+  "alt": "Salón con paredes de ladrillo y casilleros rojos; una docente sonríe junto al tablero blanco mientras estudiantes con uniforme azul y rojo la escuchan desde sus pupitres.",
+  "caption": "Clase en el aula",
+  "sourceTitle": "CELESTINSUBA_-102.jpg",
+  "sourceDriveId": "1c1CEdGlBRwYzQpkg3O6NLV1eB8Q_Uvvn"
+ },
+ {
+  "role": "g2",
+  "file": "g2.jpg",
+  "alt": "Un niño con audífonos y micrófono usa el mouse frente a un computador en una sala de cómputo; a su lado otros niños con audífonos trabajan en sus equipos.",
+  "caption": "Sala de cómputo",
+  "sourceTitle": "CELESTINSUBA_-211.jpg",
+  "sourceDriveId": "1JVV-YjfgYA2vODveSLZ3W8E4ZxJXB0Ed"
+ },
+ {
+  "role": "g3",
+  "file": "g3.jpg",
+  "alt": "Dos estudiantes con uniforme deportivo se inclinan para mover fichas en un tablero de ajedrez gigante pintado en el piso, mientras un adulto se ríe con las manos en la cabeza.",
+  "caption": "Ajedrez gigante",
+  "sourceTitle": "CELESTINSUBA_-115.jpg",
+  "sourceDriveId": "1Lm9R6-SZq-r5kU6OUhBLY3RtQivy2EVx"
+ },
+ {
+  "role": "g4",
+  "file": "g4.jpg",
+  "alt": "Cuatro niños sonríen y hacen la señal de paz frente a un mural con la palabra ZOO y carteles de animales con palabras en inglés; tres de ellos llevan antifaces de animales.",
+  "caption": "Animales en inglés",
+  "sourceTitle": "CELESTINSUBA_-214.jpg",
+  "sourceDriveId": "1lwNMnA08vYGHpppiAWYq0GFFkBciPkvH"
+ },
+ {
+  "role": "g5",
+  "file": "g5.jpg",
+  "alt": "Tres niños pequeños con batas blancas de laboratorio posan en un salón de mesas de colores; uno sonríe con el pulgar arriba, otro lleva gafas redondas y otro saluda con la mano.",
+  "caption": "Pequeños con bata",
+  "sourceTitle": "CELESTINSUBA_-13.jpg",
+  "sourceDriveId": "1U7FVYRoB2j8gD-S_XJLs372mp1SQMmXu"
+ },
+ {
+  "role": "g6",
+  "file": "g6.jpg",
+  "alt": "Estudiantes juegan voleibol en una cancha al aire libre rodeada de malla, con árboles grandes, cielo azul y edificios de ladrillo al fondo.",
+  "caption": "Voleibol al aire libre",
+  "sourceTitle": "CELESTINSUBA_-62.jpg",
+  "sourceDriveId": "1ysdwTB7pHFJ-aBqz36GWNZV1hTqrh8UT"
+ }
+]

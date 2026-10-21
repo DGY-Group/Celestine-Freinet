@@ -66,7 +66,20 @@ La cuenta regresiva cambia sola de estado: el día del evento muestra "Hoy es el
 - Promesa y pilares: presentación "Open Day Sede Administrativa 2027" (p.2 a p.7).
 - WhatsApp, PBX y correos: sitios oficiales del colegio, consultados el 21/10/2026 (celestinfreinet.edu.co, celestinfreinetbilingue.edu.co, celestinfreinetsoacha.edu.co).
 - Marca, colores, componentes y logotipos: sistema de diseño "Célestin Freinet".
-- Fotos: sesión profesional de Drive (`Fotografias/`, una carpeta por sede), con autorización firmada según la matriz.
+- Fotos: sesión profesional de Drive (`Fotografias/`, una carpeta por sede), con autorización firmada según la matriz. Recortadas y comprimidas para web; los textos alternativos están en `assets/photos/<sede>/fotos.json`.
+- Datos de cada sede contrastados con la matriz, las notas de las reuniones del 6 y el 15 de octubre, la presentación de la Sede Administrativa y el folleto de la Sede Bilingüe. Cuando las fuentes no coinciden, se usa lo que la matriz indica en "Mientras tanto, decir" o no se publica el dato.
+
+## Verificación
+
+Antes de entregar se revisaron las 8 páginas en un navegador real (Chromium):
+
+- Cada página carga su propio formulario de HubSpot (comprobado en el iframe, en `dist/` y en `dist/web/`).
+- Sin errores de consola, un solo H1 por página y todas las imágenes con texto alternativo.
+- Sin desborde horizontal en 320, 360, 390, 768, 1024, 1280, 1440 y 1920 px.
+- La cuenta regresiva probada con el reloj simulado: antes del evento, el mismo día, después (cuenta hacia diciembre) y después de diciembre.
+- Enlaces externos: todos responden 200 (WhatsApp, Google Maps, Google Calendar, YouTube, TikTok y sitios del colegio). Instagram y Facebook bloquean las consultas automáticas (429 y 400); sus direcciones se verificaron contra los sitios oficiales y el sistema de diseño.
+- Las versiones "sistema" y "Google Sans Flex" de cada sede tienen exactamente el mismo texto visible; solo cambian los segundos de la cuenta regresiva.
+- Sin rayas largas ni medias, sin emojis y sin datos que la matriz pide no publicar (el script de generación lo valida).
 
 ## Decisiones tomadas y puntos por confirmar
 
@@ -80,3 +93,4 @@ La cuenta regresiva cambia sola de estado: el día del evento muestra "Hoy es el
 8. **Estilo del formulario de HubSpot.** El formulario vive en un iframe y su estilo se ajusta en el editor de HubSpot. Hoy tiene botón dorado, campos redondeados y el teléfono con el prefijo +1 de Estados Unidos por defecto. Recomendado: botón `#7E1438`, campos sin radio, Oswald y Carlito, país Colombia (+57) por defecto, y una casilla obligatoria de autorización de datos con enlace a la política (Ley 1581 de 2012), que el formulario no trae.
 9. **Política de datos.** No hay URL publicada; cuando exista, conviene enlazarla en el pie.
 10. **Dominio en HubSpot.** Registrar el dominio donde se publiquen las páginas en la configuración de HubSpot para que los envíos no caigan en spam.
+11. **PBX.** Los tres sitios oficiales dicen 601 743 7661, que es el que usamos. El folleto de la Sede Bilingüe dice 601 743 6661 ext. 3003; parece un error del folleto, pero conviene confirmarlo.

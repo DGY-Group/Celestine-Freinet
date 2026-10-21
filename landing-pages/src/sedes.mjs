@@ -223,7 +223,7 @@ export const sedes = [
       ['Niveles', 'Preescolar a 11.°. Cupos nuevos de prejardín a 9.°'],
       ['Al egresar', 'Sin ruta técnica; certificaciones de idiomas'],
       ['Refuerzo', 'Primaria presencial, bachillerato virtual'],
-      ['Admisiones', 'Lunes a viernes 8:00 a 12:00 y 1:00 a 4:00; sábado 8:00 a 12:00'],
+      ['Horario de admisiones', 'Lunes a viernes, 8:00 a.m. a 12:00 m. y 1:00 a 4:00 p.m.; sábados, 8:00 a.m. a 12:00 m.'],
     ],
     futuroExtra: 'Certificaciones de idiomas al egresar',
     servicios: 'Sí. Restaurante y rutas escolares tercerizadas con monitoreo.',

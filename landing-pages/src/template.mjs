@@ -96,7 +96,7 @@ export function render({ sede, comun, tema, img, logos, todas }) {
       : sede.slug === 'norte'
         ? 'Conoce con tu familia el campus campestre, sus zonas verdes, la huerta y los espacios donde aprenden nuestros estudiantes.'
         : 'Conoce con tu familia los salones y los espacios donde aprenden nuestros estudiantes.' },
-    { t: 'Resuelve tus dudas', p: 'Nuestro equipo de admisiones te explica costos 2027, transporte, restaurante, uniformes y el paso a paso de la matrícula.' },
+    { t: 'Resuelve tus dudas', p: 'Nuestro equipo de admisiones te explica costos 2027, transporte, alimentación, uniformes y el paso a paso de la matrícula.' },
     sede.slug === 'ciudad-verde'
       ? { t: 'Escucha a otras familias', p: 'En la presentación verás un video con lo más importante del colegio y a familias que cuentan su experiencia.' }
       : { t: 'Ven con tu hijo o hija', p: 'El Open Day es para toda la familia: vivan juntos la experiencia de conocer el colegio.' },

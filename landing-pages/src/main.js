@@ -152,13 +152,14 @@
     enlaces.forEach(function (a) { var s = document.querySelector(a.getAttribute('href')); if (s) mapa[s.id] = a; });
     var obs = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
-        if (e.isIntersecting && mapa[e.target.id]) {
-          enlaces.forEach(function (a) { a.removeAttribute('aria-current'); });
-          mapa[e.target.id].setAttribute('aria-current', 'true');
-        }
+        if (!e.isIntersecting) return;
+        enlaces.forEach(function (a) { a.removeAttribute('aria-current'); });
+        if (mapa[e.target.id]) mapa[e.target.id].setAttribute('aria-current', 'true');
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     Object.keys(mapa).forEach(function (id) { obs.observe(document.getElementById(id)); });
+    // Las secciones sin enlace propio (hero, reserva, pilares, cierre) limpian la marca.
+    document.querySelectorAll('main > section:not([id]), #reserva').forEach(function (s) { obs.observe(s); });
   }
 
   /* ---- Agregar al calendario (.ics) ---- */

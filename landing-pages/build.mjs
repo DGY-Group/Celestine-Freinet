@@ -63,8 +63,8 @@ function logos(modo) {
 function validar(html, sede, nombre) {
   const errores = [];
   const texto = html.replace(/data:[^"')]+/g, '');
-  if (/—/.test(texto)) errores.push('contiene raya larga (em dash)');
-  if (/–/.test(texto)) errores.push('contiene raya media (en dash)');
+  if (/\u2014/.test(texto)) errores.push('contiene raya larga (em dash)');
+  if (/\u2013/.test(texto)) errores.push('contiene raya media (en dash)');
   if (/Trilingüe|Trilingue/i.test(texto)) errores.push('usa "Trilingüe" (el nombre oficial es Sede Bilingüe)');
   if (!texto.includes(`data-form-id="${sede.formId}"`)) errores.push('formulario de HubSpot incorrecto');
   if ((texto.match(/data-form-id="/g) || []).length !== 1) errores.push('debe haber exactamente un formulario');
